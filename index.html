@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>For You — Nanda Kurnia Ramadani 🕷️🕸️ | Into The Spider-Verse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800&family=Pixelify+Sans:wght@400;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- =========================================
+       SPIDER-VERSE ASSET PRELOADER
+       ========================================= -->
+  <div id="spideyPreloader" class="spidey-preloader" aria-live="polite">
+    <div class="preloader-backdrop"></div>
+    <div class="preloader-content">
+      <div class="preloader-spider-badge">
+        <div class="preloader-aura"></div>
+        <div class="preloader-mask">🕷️</div>
+      </div>
+      <h2 class="preloader-title" data-text="INITIALIZING SPIDER-VERSE">INITIALIZING SPIDER-VERSE</h2>
+      <p class="preloader-subtitle">Menyiapkan multiverse & kenangan spesial untuk Nanda...</p>
+      <div class="preloader-bar-track">
+        <div class="preloader-bar-fill" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-meta">
+        <span class="preloader-status" id="preloaderStatus">Memuat Audio & Memori...</span>
+        <span class="preloader-percent" id="preloaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Spider-Sense Lightning Alert Overlay -->
+  <div id="spideySenseAlert" class="spidey-sense-alert" aria-hidden="true">
+    <div class="sense-edge sense-edge-top"></div>
+    <div class="sense-edge sense-edge-bottom"></div>
+    <div class="sense-edge sense-edge-left"></div>
+    <div class="sense-edge sense-edge-right"></div>
+    <div class="sense-lightning sense-lt"></div>
+    <div class="sense-lightning sense-rt"></div>
+    <div class="sense-lightning sense-lb"></div>
+    <div class="sense-lightning sense-rb"></div>
+  </div>
+
+  <main id="app">
+    <!-- =========================================
+         NEW YORK CITY SKYLINE & SPIDER-VERSE BACKGROUND (DAY / SUNSET / NIGHT CYCLE)
+         ========================================= -->
+    <div class="spidey-background" id="spideyBackground" data-time="night" aria-hidden="true">
+      <!-- Sky Gradient Layers with Smooth Crossfade -->
+      <div class="sky-layer sky-day"></div>
+      <div class="sky-layer sky-sunset"></div>
+      <div class="sky-layer sky-night"></div>
+
+      <!-- Celestial Objects: Sun & Moon -->
+      <div class="celestial-container">
+        <!-- Sun (Active during Day & Sunset) -->
+        <div class="celestial-sun" id="celestialSun">
+          <div class="sun-core"></div>
+          <div class="sun-rays"></div>
+          <div class="sun-flare"></div>
+        </div>
+
+        <!-- Moon (Active during Night) -->
+        <div class="celestial-moon" id="celestialMoon">
+          <div class="moon-core">
+            <span class="moon-crater c1"></span>
+            <span class="moon-crater c2"></span>
+          </div>
+          <div class="moon-web-aura"></div>
+        </div>
+      </div>
+
+      <!-- Comic Clouds (Drifting across skyline) -->
+      <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+      </div>
+
+      <!-- Ambient City Lights & Nebula Atmosphere -->
+      <div class="city-glow-ribbon"></div>
+
+      <!-- Halftone Comic Dots Overlay -->
+      <div class="comic-halftone-grid"></div>
+
+      <!-- NYC Skyscrapers Silhouette Skyline -->
+      <div class="nyc-skyline">
+        <div class="building b1"></div>
+        <div class="building b2"></div>
+        <div class="building b3"></div>
+        <div class="building b4"></div>
+        <div class="building b5"></div>
+        <div class="building b6"></div>
+        <div class="building b7"></div>
+      </div>
+
+      <!-- Ambient Floating Web Strands & Glowing Sparks / Stars -->
+      <div class="floating-webs">
+        <span class="web-strand s1"></span>
+        <span class="web-strand s2"></span>
+        <span class="web-strand s3"></span>
+      </div>
+      <div class="ambient-sparks"></div>
+      <div class="stars-field"></div>
+    </div>
+
+    <!-- Fullscreen Celebration Web Confetti Canvas -->
+    <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+    <!-- =========================================
+         DYNAMIC WEB-SWINGING SPIDER-MAN CHARACTER
+         ========================================= -->
+    <div id="spideySwingerContainer" class="spidey-swinger-container" aria-live="polite">
+      <!-- Dynamic SVG Pixel Web Line that connects from top anchor to Spidey's hand -->
+      <svg class="spidey-web-line-svg" aria-hidden="true" shape-rendering="crispEdges">
+        <!-- Web Anchor Node (Pixel-art web knot where the strand attaches to bezel) -->
+        <g id="spideyWebAnchorNode" opacity="0">
+          <rect x="-6" y="-2" width="12" height="3" fill="#ffffff" />
+          <rect x="-3" y="1" width="6" height="3" fill="#38bdf8" />
+          <rect x="-1" y="4" width="2" height="2" fill="#ffffff" />
+        </g>
+        <line id="spideyWebGlow" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.85)" stroke-width="4.5"
+          stroke-dasharray="4,4" stroke-linecap="square" />
+        <line id="spideyWebStrand" x1="0" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="2.2"
+          stroke-dasharray="4,4" stroke-linecap="square" />
+      </svg>
+
+      <!-- Spider-Man Character Figure -->
+      <div id="spideySwingerFigure" class="spidey-figure is-hanging" role="button"
+        aria-label="Spider-Man Bergelantungan! Klik untuk interaksi" tabindex="0">
+        <!-- Comic Speech Bubble for Spidey's Greetings -->
+        <div id="spideySpeechBubble" class="spidey-speech-bubble" aria-hidden="true">
+          <span class="bubble-tail"></span>
+          <span id="spideySpeechText" class="bubble-text">Woohoo! Happy Birthday Nanda! 🕷️✨</span>
+        </div>
+
+        <!-- 1. Dedicated Inverted Hanging Pose (Web connected at top center ankles: x=60, y=8) -->
+        <svg id="spideyPoseHang" class="spidey-character-svg spidey-pose-hang" viewBox="0 0 120 150" fill="none"
+          xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+          <!-- Web-wrapping around Ankles (Center at x=60, y=8) -->
+          <rect x="56" y="2" width="8" height="12" fill="rgba(255,255,255,0.7)" />
+          <rect x="58" y="4" width="4" height="8" fill="#ffffff" />
+          <rect x="57" y="10" width="6" height="2" fill="#ffffff" />
+
+          <!-- Interlocked Boots / Ankles at Top -->
+          <rect x="46" y="8" width="28" height="18" fill="#090d16" />
+          <rect x="44" y="6" width="8" height="6" fill="#090d16" />
+          <rect x="68" y="6" width="8" height="6" fill="#090d16" />
+          <!-- Boot soles pointing upward/outward -->
+          <rect x="46" y="8" width="6" height="4" fill="#e11d48" />
+          <rect x="46" y="8" width="3" height="4" fill="#ff2d55" />
+          <rect x="68" y="8" width="6" height="4" fill="#e11d48" />
+          <rect x="71" y="8" width="3" height="4" fill="#9f1239" />
+          <!-- Red Boots Body -->
+          <rect x="48" y="10" width="11" height="14" fill="#e11d48" />
+          <rect x="48" y="10" width="4" height="14" fill="#ff2d55" />
+          <rect x="61" y="10" width="11" height="14" fill="#e11d48" />
+          <rect x="68" y="10" width="4" height="14" fill="#9f1239" />
+
+          <!-- Inverted Diamond Legs (Classic Spider-Man Squat) -->
+          <!-- Left Leg / Knee -->
+          <rect x="28" y="22" width="22" height="12" fill="#090d16" />
+          <rect x="20" y="30" width="18" height="18" fill="#090d16" />
+          <rect x="28" y="44" width="20" height="12" fill="#090d16" />
+          <!-- Left Leg Blue Suit -->
+          <rect x="30" y="24" width="18" height="8" fill="#0284c7" />
+          <rect x="30" y="24" width="6" height="8" fill="#38bdf8" />
+          <rect x="22" y="32" width="14" height="14" fill="#0284c7" />
+          <rect x="22" y="32" width="4" height="14" fill="#38bdf8" />
+          <rect x="30" y="46" width="16" height="8" fill="#0284c7" />
+          <rect x="30" y="46" width="4" height="8" fill="#38bdf8" />
+          <rect x="38" y="46" width="8" height="8" fill="#0f172a" />
+
+          <!-- Right Leg / Knee -->
+          <rect x="70" y="22" width="22" height="12" fill="#090d16" />
+          <rect x="82" y="30" width="18" height="18" fill="#090d16" />
+          <rect x="72" y="44" width="20" height="12" fill="#090d16" />
+          <!-- Right Leg Blue Suit -->
+          <rect x="72" y="24" width="18" height="8" fill="#0284c7" />
+          <rect x="82" y="24" width="8" height="8" fill="#0f172a" />
+          <rect x="84" y="32" width="14" height="14" fill="#0284c7" />
+          <rect x="92" y="32" width="6" height="14" fill="#0f172a" />
+          <rect x="84" y="32" width="4" height="14" fill="#38bdf8" />
+          <rect x="74" y="46" width="16" height="8" fill="#0284c7" />
+          <rect x="74" y="46" width="6" height="8" fill="#38bdf8" />
+
+          <!-- Hips & Belt -->
+          <rect x="42" y="52" width="36" height="12" fill="#090d16" />
+          <rect x="44" y="54" width="32" height="8" fill="#e11d48" />
+          <rect x="44" y="54" width="8" height="8" fill="#ff2d55" />
+          <rect x="68" y="54" width="8" height="8" fill="#9f1239" />
+
+          <!-- Inverted Torso (Hanging downward) -->
+          <rect x="38" y="62" width="44" height="28" fill="#090d16" />
+          <!-- Blue Flanks -->
+          <rect x="40" y="64" width="10" height="24" fill="#0284c7" />
+          <rect x="40" y="64" width="4" height="24" fill="#38bdf8" />
+          <rect x="70" y="64" width="10" height="24" fill="#0284c7" />
+          <rect x="76" y="64" width="4" height="24" fill="#0f172a" />
+          <!-- Red Center Chest -->
+          <rect x="48" y="64" width="24" height="24" fill="#e11d48" />
+          <rect x="48" y="64" width="5" height="24" fill="#ff2d55" />
+          <rect x="67" y="64" width="5" height="24" fill="#9f1239" />
+
+          <!-- Chest Spider Emblem (Inverted spider on chest) -->
+          <rect x="59" y="70" width="2" height="8" fill="#090d16" />
+          <rect x="57" y="72" width="6" height="4" fill="#090d16" />
+          <rect x="54" y="68" width="2" height="4" fill="#090d16" />
+          <rect x="64" y="68" width="2" height="4" fill="#090d16" />
+          <rect x="54" y="76" width="2" height="4" fill="#090d16" />
+          <rect x="64" y="76" width="2" height="4" fill="#090d16" />
+
+          <!-- Left Arm (Gesturing a relaxed wave / thwip) -->
+          <rect x="28" y="66" width="12" height="12" fill="#090d16" />
+          <rect x="24" y="76" width="12" height="16" fill="#090d16" />
+          <rect x="22" y="90" width="14" height="12" fill="#090d16" />
+          <rect x="30" y="68" width="8" height="8" fill="#e11d48" />
+          <rect x="30" y="68" width="3" height="8" fill="#ff2d55" />
+          <rect x="26" y="78" width="8" height="12" fill="#e11d48" />
+          <rect x="26" y="78" width="3" height="12" fill="#ff2d55" />
+          <rect x="24" y="92" width="10" height="8" fill="#e11d48" />
+          <rect x="24" y="92" width="3" height="4" fill="#ff2d55" />
+          <rect x="26" y="98" width="2" height="2" fill="#ffffff" />
+
+          <!-- Right Arm (Relaxed hanging) -->
+          <rect x="80" y="66" width="12" height="12" fill="#090d16" />
+          <rect x="84" y="76" width="12" height="16" fill="#090d16" />
+          <rect x="84" y="90" width="12" height="10" fill="#090d16" />
+          <rect x="82" y="68" width="8" height="8" fill="#e11d48" />
+          <rect x="86" y="78" width="8" height="12" fill="#e11d48" />
+          <rect x="91" y="78" width="3" height="12" fill="#9f1239" />
+          <rect x="86" y="92" width="8" height="6" fill="#e11d48" />
+          <rect x="89" y="92" width="3" height="6" fill="#9f1239" />
+
+          <!-- Inverted Mask & Head (Hanging at bottom, looking forward) -->
+          <rect x="52" y="88" width="16" height="6" fill="#090d16" />
+          <rect x="46" y="94" width="28" height="4" fill="#090d16" />
+          <rect x="42" y="98" width="36" height="22" fill="#090d16" />
+          <rect x="46" y="120" width="28" height="6" fill="#090d16" />
+          <rect x="50" y="126" width="20" height="4" fill="#090d16" />
+          <!-- Mask Red Fill -->
+          <rect x="54" y="90" width="12" height="4" fill="#e11d48" />
+          <rect x="48" y="96" width="24" height="2" fill="#e11d48" />
+          <rect x="44" y="98" width="32" height="22" fill="#e11d48" />
+          <rect x="48" y="120" width="24" height="4" fill="#e11d48" />
+          <rect x="52" y="124" width="16" height="4" fill="#e11d48" />
+          <!-- Mask Highlights & Shadows -->
+          <rect x="44" y="98" width="4" height="22" fill="#ff2d55" />
+          <rect x="48" y="120" width="4" height="4" fill="#ff2d55" />
+          <rect x="72" y="98" width="4" height="22" fill="#9f1239" />
+          <rect x="64" y="120" width="4" height="4" fill="#9f1239" />
+          <!-- Web Grid on Mask -->
+          <rect x="59" y="96" width="2" height="30" fill="#090d16" opacity="0.35" />
+          <rect x="44" y="108" width="32" height="2" fill="#090d16" opacity="0.35" />
+          <rect x="46" y="102" width="28" height="1" fill="#090d16" opacity="0.25" />
+          <rect x="46" y="116" width="28" height="1" fill="#090d16" opacity="0.25" />
+
+          <!-- Big Expressive Eyes -->
+          <!-- Left Eye -->
+          <rect x="46" y="102" width="10" height="12" fill="#090d16" />
+          <rect x="48" y="104" width="7" height="8" fill="#ffffff" />
+          <rect x="49" y="105" width="4" height="4" fill="#ffffff" />
+          <rect x="47" y="103" width="2" height="3" fill="#38bdf8" />
+          <!-- Right Eye -->
+          <rect x="64" y="102" width="10" height="12" fill="#090d16" />
+          <rect x="65" y="104" width="7" height="8" fill="#ffffff" />
+          <rect x="67" y="105" width="4" height="4" fill="#ffffff" />
+          <rect x="71" y="103" width="2" height="3" fill="#38bdf8" />
+        </svg>
+
+        <!-- 2. Retro Arcade Pixel Art Spider-Man (Dynamic Acrobatic Swinging Pose) -->
+        <svg id="spideyPoseSwing" class="spidey-character-svg spidey-pose-swing" viewBox="0 0 120 150" fill="none"
+          xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+          <!-- Web-Grip Lead Hand (Center at x=86, y=14) -->
+          <rect x="82" y="10" width="10" height="10" fill="#090d16" />
+          <rect x="83" y="11" width="8" height="8" fill="#e11d48" />
+          <rect x="84" y="11" width="4" height="4" fill="#ff2d55" />
+          <rect x="85" y="12" width="4" height="4" fill="#ffffff" />
+          <rect x="86" y="13" width="2" height="2" fill="#ffffff" />
+
+          <!-- Lead Arm (Stretching forward-upward to fist, keeping head unobstructed) -->
+          <!-- Forearm -->
+          <rect x="80" y="18" width="10" height="6" fill="#090d16" />
+          <rect x="76" y="22" width="10" height="6" fill="#090d16" />
+          <rect x="72" y="26" width="10" height="6" fill="#090d16" />
+          <rect x="81" y="19" width="8" height="4" fill="#e11d48" />
+          <rect x="77" y="23" width="8" height="4" fill="#e11d48" />
+          <rect x="73" y="27" width="8" height="4" fill="#e11d48" />
+          <rect x="81" y="19" width="3" height="4" fill="#ff2d55" />
+          <rect x="77" y="23" width="3" height="4" fill="#ff2d55" />
+          <rect x="73" y="27" width="3" height="4" fill="#ff2d55" />
+          <!-- Upper Arm / Bicep -->
+          <rect x="68" y="30" width="10" height="8" fill="#090d16" />
+          <rect x="64" y="36" width="10" height="8" fill="#090d16" />
+          <rect x="60" y="42" width="10" height="8" fill="#090d16" />
+          <rect x="69" y="31" width="8" height="6" fill="#e11d48" />
+          <rect x="65" y="37" width="8" height="6" fill="#e11d48" />
+          <rect x="61" y="43" width="8" height="6" fill="#e11d48" />
+          <rect x="73" y="31" width="3" height="6" fill="#0284c7" />
+          <rect x="69" y="37" width="3" height="6" fill="#0f172a" />
+
+          <!-- Trailing Arm (Sweeping backward for aerodynamic balance) -->
+          <rect x="28" y="48" width="12" height="8" fill="#090d16" />
+          <rect x="18" y="52" width="12" height="8" fill="#090d16" />
+          <rect x="8" y="54" width="12" height="8" fill="#090d16" />
+          <rect x="30" y="50" width="8" height="5" fill="#e11d48" />
+          <rect x="30" y="50" width="3" height="5" fill="#ff2d55" />
+          <rect x="20" y="54" width="8" height="5" fill="#e11d48" />
+          <rect x="20" y="54" width="3" height="5" fill="#ff2d55" />
+          <rect x="10" y="56" width="8" height="4" fill="#e11d48" />
+          <!-- Splayed thwip fingers -->
+          <rect x="6" y="54" width="4" height="3" fill="#e11d48" />
+          <rect x="6" y="60" width="4" height="3" fill="#e11d48" />
+          <rect x="10" y="57" width="2" height="2" fill="#ffffff" />
+
+          <!-- Trailing Leg (Left Leg - Aerodynamically tucked underneath/behind) -->
+          <!-- Tucked Thigh -->
+          <rect x="32" y="72" width="16" height="16" fill="#090d16" />
+          <rect x="34" y="74" width="12" height="12" fill="#0284c7" />
+          <rect x="34" y="74" width="4" height="12" fill="#38bdf8" />
+          <rect x="40" y="74" width="6" height="12" fill="#0f172a" />
+          <!-- Backward Knee -->
+          <rect x="22" y="82" width="14" height="14" fill="#090d16" />
+          <rect x="24" y="84" width="10" height="10" fill="#0284c7" />
+          <rect x="24" y="84" width="3" height="10" fill="#38bdf8" />
+          <!-- Calf & Boot -->
+          <rect x="14" y="92" width="14" height="14" fill="#090d16" />
+          <rect x="16" y="94" width="10" height="10" fill="#e11d48" />
+          <rect x="16" y="94" width="4" height="10" fill="#ff2d55" />
+          <rect x="20" y="96" width="6" height="8" fill="#9f1239" />
+          <!-- Boot Foot Tip -->
+          <rect x="10" y="102" width="12" height="8" fill="#090d16" />
+          <rect x="12" y="104" width="8" height="4" fill="#e11d48" />
+          <rect x="10" y="107" width="12" height="2" fill="#090d16" />
+
+          <!-- Lead Leg (Right Leg - Thrusting forward in acrobatic flight kick) -->
+          <!-- Thigh -->
+          <rect x="56" y="72" width="16" height="16" fill="#090d16" />
+          <rect x="68" y="76" width="16" height="16" fill="#090d16" />
+          <rect x="58" y="74" width="12" height="12" fill="#0284c7" />
+          <rect x="58" y="74" width="5" height="12" fill="#38bdf8" />
+          <rect x="70" y="78" width="12" height="12" fill="#0284c7" />
+          <rect x="70" y="78" width="4" height="12" fill="#38bdf8" />
+          <rect x="76" y="78" width="6" height="12" fill="#0f172a" />
+          <!-- Knee & Shin -->
+          <rect x="80" y="86" width="16" height="14" fill="#090d16" />
+          <rect x="92" y="94" width="16" height="14" fill="#090d16" />
+          <rect x="82" y="88" width="12" height="10" fill="#0284c7" />
+          <rect x="82" y="88" width="4" height="10" fill="#38bdf8" />
+          <!-- Red Boot Shin -->
+          <rect x="94" y="96" width="12" height="10" fill="#e11d48" />
+          <rect x="94" y="96" width="4" height="10" fill="#ff2d55" />
+          <rect x="100" y="98" width="6" height="8" fill="#9f1239" />
+          <!-- Boot Foot Tip -->
+          <rect x="102" y="102" width="14" height="8" fill="#090d16" />
+          <rect x="104" y="103" width="10" height="5" fill="#e11d48" />
+          <rect x="106" y="103" width="6" height="3" fill="#ff2d55" />
+          <rect x="102" y="107" width="14" height="2" fill="#090d16" />
+
+          <!-- Torso & Hips (Heroic arched forward lean) -->
+          <rect x="38" y="44" width="32" height="28" fill="#090d16" />
+          <!-- Blue Flanks -->
+          <rect x="40" y="46" width="8" height="22" fill="#0284c7" />
+          <rect x="40" y="46" width="4" height="22" fill="#38bdf8" />
+          <rect x="62" y="46" width="6" height="22" fill="#0284c7" />
+          <rect x="64" y="50" width="4" height="18" fill="#0f172a" />
+          <!-- Red Center Chest -->
+          <rect x="48" y="46" width="14" height="22" fill="#e11d48" />
+          <rect x="48" y="46" width="5" height="22" fill="#ff2d55" />
+          <rect x="58" y="46" width="4" height="22" fill="#9f1239" />
+          <!-- Red Belt -->
+          <rect x="40" y="68" width="26" height="6" fill="#e11d48" />
+          <rect x="40" y="68" width="6" height="6" fill="#ff2d55" />
+          <rect x="60" y="68" width="6" height="6" fill="#9f1239" />
+
+          <!-- Chest Spider Emblem -->
+          <rect x="53" y="52" width="2" height="6" fill="#090d16" />
+          <rect x="51" y="50" width="2" height="2" fill="#090d16" />
+          <rect x="55" y="50" width="2" height="2" fill="#090d16" />
+          <rect x="49" y="54" width="2" height="2" fill="#090d16" />
+          <rect x="57" y="54" width="2" height="2" fill="#090d16" />
+          <rect x="50" y="58" width="2" height="2" fill="#090d16" />
+          <rect x="56" y="58" width="2" height="2" fill="#090d16" />
+
+          <!-- Head & Mask (Angled forward into flight, completely clear of the arm) -->
+          <rect x="48" y="20" width="20" height="4" fill="#090d16" />
+          <rect x="44" y="24" width="28" height="16" fill="#090d16" />
+          <rect x="48" y="40" width="20" height="4" fill="#090d16" />
+          <!-- Mask Red Fill -->
+          <rect x="50" y="22" width="16" height="2" fill="#e11d48" />
+          <rect x="46" y="24" width="24" height="16" fill="#e11d48" />
+          <rect x="50" y="40" width="16" height="2" fill="#e11d48" />
+          <!-- Highlights & Shadows -->
+          <rect x="50" y="22" width="12" height="2" fill="#ff2d55" />
+          <rect x="46" y="24" width="4" height="14" fill="#ff2d55" />
+          <rect x="64" y="26" width="4" height="14" fill="#9f1239" />
+          <!-- Web Lines -->
+          <rect x="56" y="22" width="2" height="20" fill="#090d16" opacity="0.35" />
+          <rect x="46" y="32" width="24" height="2" fill="#090d16" opacity="0.35" />
+          <rect x="48" y="26" width="20" height="1" fill="#090d16" opacity="0.25" />
+          <rect x="48" y="38" width="20" height="1" fill="#090d16" opacity="0.25" />
+
+          <!-- Expressive Big Angular Eyes -->
+          <!-- Left Eye (Farther) -->
+          <rect x="46" y="28" width="7" height="9" fill="#090d16" />
+          <rect x="48" y="30" width="4" height="5" fill="#ffffff" />
+          <rect x="47" y="29" width="2" height="2" fill="#38bdf8" />
+          <!-- Right Eye (Closer & sharper) -->
+          <rect x="57" y="27" width="9" height="11" fill="#090d16" />
+          <rect x="59" y="29" width="6" height="7" fill="#ffffff" />
+          <rect x="60" y="30" width="3" height="4" fill="#ffffff" />
+          <rect x="58" y="28" width="2" height="2" fill="#38bdf8" />
+        </svg>
+      </div>
+    </div>
+
+
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- =========================================
+         SPIDEY TRACKER HANDHELD DEVICE CHASSIS
+         ========================================= -->
+    <div class="spidey-tracker-device" id="spideyTrackerDevice">
+      <!-- Top Bezel -->
+      <header class="tracker-top-bezel">
+        <div class="tracker-sensor-eye" title="Multi-Spectrum Optical Sensor">
+          <span class="sensor-iris"></span>
+          <span class="sensor-flare"></span>
+        </div>
+
+        <div class="tracker-telemetry-ruler" aria-hidden="true">
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+          <span class="telemetry-tick"></span>
+        </div>
+
+        <div class="tracker-badge-pill">
+          <span class="tb-bracket">[</span>
+          <span class="tb-text">SPIDEY</span>
+          <span class="tb-mask-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+              <ellipse cx="12" cy="12" rx="10" ry="11" fill="#e11d48" stroke="#090d16" stroke-width="1.8" />
+              <path d="M12 2 V22 M2 12 H22 M4 5 L20 19 M4 19 L20 5" stroke="rgba(0,0,0,0.3)" stroke-width="0.8" />
+              <path d="M6 10 Q10 10 11 14 Q7 15 6 10 Z" fill="#ffffff" stroke="#090d16" stroke-width="1.2" />
+              <path d="M18 10 Q14 10 13 14 Q17 15 18 10 Z" fill="#ffffff" stroke="#090d16" stroke-width="1.2" />
+            </svg>
+          </span>
+          <span class="tb-text">TRACKER</span>
+          <span class="tb-bracket">]</span>
+        </div>
+
+        <div class="tracker-bezel-spacer" aria-hidden="true"></div>
+      </header>
+
+      <!-- Left Physical Tabs & Clinging Pixel Spidey -->
+      <div class="tracker-side-tabs" aria-label="Quick Navigasi Spidey Tracker">
+        <button type="button" class="tracker-tab tab-orange active" id="trackerTabRadar"
+          title="Lacak Sinyal Multiverse (Aktif)">
+          <span class="tab-icon">⚡</span>
+          <span class="tab-label">RADAR</span>
+        </button>
+        <button type="button" class="tracker-tab tab-green locked" id="trackerTabStory"
+          title="Menuju Cerita & Misi (Terkunci)">
+          <span class="tab-icon">🔒</span>
+          <span class="tab-label">MISSION</span>
+        </button>
+        <button type="button" class="tracker-tab tab-coral locked" id="trackerTabHero"
+          title="Menuju Kartu Spider-Hero (Terkunci)">
+          <span class="tab-icon">🔒</span>
+          <span class="tab-label">HERO ID</span>
+        </button>
+      </div>
+
+      <!-- Hanging Pixel Spider-Man Mascot (Bottom Left Corner of Chassis) -->
+      <div class="tracker-pixel-spidey" id="trackerPixelSpidey" role="button" tabindex="0"
+        title="Spidey Bergelantungan di Tracker! Klik untuk Thwip!">
+        <div class="pixel-spidey-speech" id="pixelSpideySpeech">Thwip! 🕷️✨</div>
+        <svg viewBox="0 0 32 40" width="42" height="52" class="pixel-spidey-svg">
+          <rect x="10" y="2" width="12" height="12" fill="#e11d48" rx="2" />
+          <rect x="11" y="5" width="4" height="4" fill="#ffffff" />
+          <rect x="17" y="5" width="4" height="4" fill="#ffffff" />
+          <rect x="12" y="6" width="2" height="2" fill="#090d16" />
+          <rect x="18" y="6" width="2" height="2" fill="#090d16" />
+          <rect x="11" y="14" width="10" height="12" fill="#e11d48" />
+          <rect x="9" y="14" width="2" height="10" fill="#0284c7" />
+          <rect x="21" y="14" width="2" height="10" fill="#0284c7" />
+          <rect x="15" y="18" width="2" height="3" fill="#090d16" />
+          <rect x="8" y="24" width="4" height="8" fill="#0284c7" />
+          <rect x="6" y="32" width="6" height="4" fill="#e11d48" />
+          <rect x="20" y="24" width="4" height="8" fill="#0284c7" />
+          <rect x="20" y="32" width="6" height="4" fill="#e11d48" />
+          <rect x="5" y="12" width="5" height="4" fill="#e11d48" />
+          <rect x="22" y="12" width="5" height="4" fill="#e11d48" />
+        </svg>
+      </div>
+
+      <!-- Main Display Screen Viewport -->
+      <div class="tracker-screen-viewport" id="trackerScreenViewport">
+        <!-- Holographic CRT Glare & Scanline Texture Overlay -->
+        <div class="tracker-crt-glare"></div>
+        <div class="tracker-scanlines"></div>
+
+        <!-- Authentic Spidey Tracker HUD Elements (Map & Radar Sonar) -->
+        <div class="tracker-hud-layer" aria-hidden="true">
+          <!-- Stylized World Map Grid Silhouettes -->
+          <svg class="tracker-hud-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
+            <defs>
+              <pattern id="hudMapGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(6, 182, 212, 0.08)" stroke-width="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hudMapGrid)" />
+            <!-- Continents Silhouette Paths (Styled low-poly) -->
+            <path class="hud-continent" d="M110 80 Q170 60 240 90 Q270 140 210 190 Q130 170 110 80 Z" />
+            <path class="hud-continent" d="M200 230 Q250 220 270 300 Q240 390 210 430 Q180 350 200 230 Z" />
+            <path class="hud-continent" d="M510 90 Q610 70 690 100 Q640 180 530 160 Z" />
+            <path class="hud-continent" d="M530 190 Q630 200 610 320 Q550 390 510 290 Z" />
+            <path class="hud-continent" d="M710 120 Q870 110 910 210 Q830 300 740 230 Z" />
+            <path class="hud-continent" d="M770 330 Q850 320 870 390 Q790 430 750 380 Z" />
+
+            <!-- Multiverse Coordinate Crosses & Lat/Long Lines -->
+            <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(6,182,212,0.18)" stroke-dasharray="4,6" />
+            <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(6,182,212,0.18)" stroke-dasharray="4,6" />
+
+            <!-- Spider Tracker Blip Markers (Green, Red, Cyan) -->
+            <g class="hud-spider-blip blip-nyc" transform="translate(220, 130)">
+              <circle r="9" fill="#ef4444" stroke="#09222a" stroke-width="2" />
+              <text x="0" y="3" font-size="8" text-anchor="middle" fill="#ffffff">★</text>
+            </g>
+            <g class="hud-spider-blip blip-london" transform="translate(530, 120)">
+              <circle r="8" fill="#38bdf8" stroke="#09222a" stroke-width="2" />
+              <text x="0" y="3" font-size="7" text-anchor="middle" fill="#ffffff">★</text>
+            </g>
+            <g class="hud-spider-blip blip-tokyo" transform="translate(850, 160)">
+              <circle r="8" fill="#34d399" stroke="#09222a" stroke-width="2" />
+              <text x="0" y="3" font-size="7" text-anchor="middle" fill="#ffffff">★</text>
+            </g>
+            <g class="hud-spider-blip blip-sydney" transform="translate(810, 370)">
+              <circle r="8" fill="#ef4444" stroke="#09222a" stroke-width="2" />
+              <text x="0" y="3" font-size="7" text-anchor="middle" fill="#ffffff">★</text>
+            </g>
+          </svg>
+
+          <!-- Vertical Ruler Telemetry Gauge on Left Edge -->
+          <div class="tracker-hud-vscale">
+            <span class="vscale-tick t1"></span>
+            <span class="vscale-tick t2"></span>
+            <span class="vscale-tick t3"></span>
+            <span class="vscale-tick t4"></span>
+            <span class="vscale-tick t5"></span>
+          </div>
+
+          <!-- Circular Web-Sonar Radar in Bottom Right Corner -->
+          <div class="tracker-hud-sonar">
+            <div class="sonar-dish">
+              <div class="sonar-web-rings"></div>
+              <div class="sonar-crosshairs"></div>
+              <div class="sonar-sweep-beam"></div>
+              <div class="sonar-target-dot dot-1"></div>
+              <div class="sonar-target-dot dot-2"></div>
+              <div class="sonar-target-dot dot-3"></div>
+            </div>
+            <div class="sonar-sub-icons">
+              <span class="sonar-icon active">🌐</span>
+              <span class="sonar-icon">🎯</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inner Content (All Screens Container) -->
+        <div class="tracker-screen-inner" id="trackerScreenInner">
+
+          <!-- =========================================
+               SCREEN 1: SPIDER-VERSE OPENING
+               ========================================= -->
+          <section class="screen active" id="opening">
+            <div class="card opening-card spidey-glass-card">
+              <!-- Spider-Man Emblem Badge with Spider-Sense Aura -->
+              <div class="spidey-badge-wrap">
+                <div class="spider-sense-aura"></div>
+                <svg class="spidey-mask-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="sm-mask-red" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ef4444" />
+                      <stop offset="60%" stop-color="#dc2626" />
+                      <stop offset="100%" stop-color="#991b1b" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M32 4 C18 4 10 16 10 32 C10 46 22 58 32 62 C42 58 54 46 54 32 C54 16 46 4 32 4 Z"
+                    fill="url(#sm-mask-red)" stroke="#1e293b" stroke-width="2" />
+                  <!-- Web Grid Lines on Mask -->
+                  <path d="M32 4 L32 62 M10 32 Q32 36 54 32 M13 20 Q32 26 51 20 M14 44 Q32 48 50 44"
+                    stroke="rgba(0,0,0,0.4)" stroke-width="1.2" fill="none" />
+                  <path d="M22 6 Q32 24 22 60 M42 6 Q32 24 42 60" stroke="rgba(0,0,0,0.4)" stroke-width="1.2"
+                    fill="none" />
+                  <!-- Left Eye -->
+                  <path d="M16 26 C16 26 22 23 28 32 C26 38 18 36 16 26 Z" fill="#ffffff" stroke="#0f172a"
+                    stroke-width="2.5" />
+                  <!-- Right Eye -->
+                  <path d="M48 26 C48 26 42 23 36 32 C38 38 46 36 48 26 Z" fill="#ffffff" stroke="#0f172a"
+                    stroke-width="2.5" />
+                </svg>
+              </div>
+
+              <p class="opening-badge">✦ SPIDER-VERSE SPECIAL MISSION ✦</p>
+              <h1 class="shimmer-title spidey-title">A Special Surprise</h1>
+              <p class="opening-sub">Sebuah perjalanan melintasi multiverse, khusus untuk Nanda 🕷️✨</p>
+              <button class="tap-start-btn spidey-btn" id="tapStartBtn" type="button">
+                <span>🕷️ Web-Zip Into Mission</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 2: SPIDER-VAULT PIN
+         ========================================= -->
+          <section class="screen" id="pin">
+            <div class="card pin-card spidey-glass-card">
+              <div class="spider-top-icon">🕸️</div>
+              <p class="eyebrow">✦ RESTRICTED ARCHIVE ✦</p>
+              <h1 class="spidey-h1">Access Spider-Files</h1>
+              <p class="pin-desc">Masukkan 4 digit kode tanggal spesial</p>
+              <div class="dots spidey-dots" id="dots">
+                <i></i><i></i><i></i><i></i>
+              </div>
+              <div class="keypad spidey-keypad">
+                <button type="button" data-key="1">1</button>
+                <button type="button" data-key="2">2</button>
+                <button type="button" data-key="3">3</button>
+                <button type="button" data-key="4">4</button>
+                <button type="button" data-key="5">5</button>
+                <button type="button" data-key="6">6</button>
+                <button type="button" data-key="7">7</button>
+                <button type="button" data-key="8">8</button>
+                <button type="button" data-key="9">9</button>
+                <button type="button" class="muted" data-key="clear">C</button>
+                <button type="button" data-key="0">0</button>
+                <button type="button" class="muted" data-key="back">⌫</button>
+              </div>
+              <p class="hint">Petunjuk: Hari & bulan kelahiranmu (DDMM)</p>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 3: SPIDER-SUIT MYSTERY BOX
+         ========================================= -->
+          <section class="screen" id="gift">
+            <div class="gift-container">
+              <!-- Ambient Spider Pulse Ring -->
+              <div class="gift-ambient-ring"></div>
+              <p class="opening-label">✦ SPECIAL DELIVERY FROM PETER PARKER ✦</p>
+              <h1 class="gift-title">A Gift For You</h1>
+
+              <div class="gift-stage-wrapper">
+                <!-- Laser light burst rays behind box on unbox -->
+                <div class="gift-light-burst" id="giftLightBurst">
+                  <span class="burst-ray ray-1"></span>
+                  <span class="burst-ray ray-2"></span>
+                  <span class="burst-ray ray-3"></span>
+                  <span class="burst-ray ray-4"></span>
+                  <span class="burst-ray ray-5"></span>
+                  <span class="burst-ray ray-6"></span>
+                  <span class="burst-ray ray-7"></span>
+                  <span class="burst-ray ray-8"></span>
+                </div>
+
+                <!-- Spider-Sense energy halo -->
+                <div class="spidey-sense-halo"></div>
+
+                <!-- The Interactive 3D Gift Box -->
+                <div class="gift-box spidey-gift-box" id="giftBox" role="button" aria-label="Buka Kado Spesial"
+                  tabindex="0">
+                  <!-- Neon spider-web seals spanning across lid and body -->
+                  <div class="web-seal seal-tl"></div>
+                  <div class="web-seal seal-tr"></div>
+                  <div class="web-seal seal-bl"></div>
+                  <div class="web-seal seal-br"></div>
+
+                  <!-- Rising Surprise Hologram (emerges dramatically when box pops open) -->
+                  <div class="gift-surprise-hologram" id="giftSurprise">
+                    <div class="surprise-aura"></div>
+                    <div class="surprise-badge">✦ SPIDER-SUIT UNLOCKED ✦</div>
+                    <div class="surprise-icon">🕷️✨</div>
+                    <div class="surprise-title">HAPPY BIRTHDAY!</div>
+                    <div class="surprise-sub">Nanda Kurnia Ramadani</div>
+                  </div>
+
+                  <!-- 3D Gift Lid -->
+                  <div class="gift-lid" id="giftLid">
+                    <div class="gift-bow">
+                      <span class="bow-wing bow-left"></span>
+                      <span class="bow-wing bow-right"></span>
+                      <span class="bow-core">🕸️</span>
+                    </div>
+                    <div class="lid-rim"></div>
+                  </div>
+
+                  <!-- 3D Gift Box Body -->
+                  <div class="gift-body" id="giftBody">
+                    <div class="gift-interior-glow"></div>
+                    <div class="gift-ribbon-v"></div>
+                    <div class="gift-ribbon-h"></div>
+                    <div class="gift-spider-emblem">🕷️</div>
+                    <div class="gift-shimmer-highlight"></div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="gift-hint" id="giftHint">🕸️ Ketuk kotak untuk merobek jaring & membuka isinya!</p>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 4: MAIN STORY & MULTIVERSE SHOWCASE
+         ========================================= -->
+          <section class="screen" id="mainStory">
+            <div class="story-scroll-container">
+
+              <!-- 1. HERO BIRTHDAY CAKE SECTION -->
+              <header class="story-hero">
+                <div class="hero-badge">✦ HAPPY BIRTHDAY NANDA ✦</div>
+                <h1 class="hero-name" id="personName">Nanda Kurnia Ramadani</h1>
+                <p class="date-line">29 SEPTEMBER · THE MOST SPECIAL DAY</p>
+
+                <!-- Interactive Spider Birthday Cake -->
+                <div class="cake-container" id="cakeSection">
+                  <div class="birthday-cake spidey-cake" id="birthdayCake" role="button" aria-label="Tiup Lilin"
+                    tabindex="0">
+                    <!-- Candle with interactive flame -->
+                    <div class="candle" id="candle">
+                      <div class="flame" id="flame"></div>
+                    </div>
+                    <div class="cake-top">
+                      <span class="cake-spider-logo">🕷️</span>
+                    </div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-bottom"></div>
+                  </div>
+                  <p class="cake-hint" id="cakeHint">✨ Tiup lilinnya & ucapkan harapanmu ✨</p>
+                  <div class="wish-message" id="wishMessage">🎉 Harapan terkirim ke seluruh multiverse! Semoga semua
+                    impian,
+                    kebahagiaan, dan kebaikan selalu menyertaimu di umur baru ini ya! 💖🕸️</div>
+                </div>
+
+                <div class="scroll-indicator">
+                  <span>Scroll ke bawah untuk menjelajahi Spider-Verse Multiverse</span>
+                  <div class="scroll-arrow">↓</div>
+                </div>
+              </header>
+
+              <!-- 2. SPIDER-VERSE MULTIVERSE SUITS ARCHIVE -->
+              <section class="story-section planetarium-section" id="secPlanetarium" data-planet="🕷️ Classic & ⚡ Miles"
+                data-emoji="🕷️">
+                <div class="section-card spidey-glass-card">
+                  <p class="eyebrow">🕷️ — SPIDER-VERSE MULTIVERSE ARCHIVE — 🕷️</p>
+                  <h2 class="section-title">The Spider-Variants for You</h2>
+                  <p class="sub">Setiap varian kostum Spider-Man mewakili karakter istimewa yang ada dalam dirimu. Ketuk
+                    kostumnya ya ✨</p>
+
+                  <div class="planets-grid" id="planetariumGrid">
+                    <!-- 1. Classic Peter Parker -->
+                    <button type="button" class="planet-btn active" data-index="0" aria-label="Classic Peter Parker">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-classic" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#f87171" />
+                              <stop offset="50%" stop-color="#dc2626" />
+                              <stop offset="100%" stop-color="#7f1d1d" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-classic)" stroke="#1e293b" stroke-width="1.5" />
+                          <path d="M4 24 H44 M24 4 V44 M10 10 L38 38 M10 38 L38 10" stroke="rgba(0,0,0,0.35)"
+                            stroke-width="1.2" />
+                          <path d="M12 20 C14 17 19 16 23 23 C21 28 15 27 12 20 Z" fill="#ffffff" stroke="#0f172a"
+                            stroke-width="2" />
+                          <path d="M36 20 C34 17 29 16 25 23 C27 28 33 27 36 20 Z" fill="#ffffff" stroke="#0f172a"
+                            stroke-width="2" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Classic Spidey</span>
+                    </button>
+
+                    <!-- 2. Miles Morales -->
+                    <button type="button" class="planet-btn" data-index="1" aria-label="Miles Morales">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-miles" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#334155" />
+                              <stop offset="60%" stop-color="#0f172a" />
+                              <stop offset="100%" stop-color="#020617" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-miles)" stroke="#ef4444" stroke-width="2" />
+                          <path d="M4 24 H44 M24 4 V44 M10 10 L38 38 M10 38 L38 10" stroke="rgba(239,68,68,0.4)"
+                            stroke-width="1.2" />
+                          <path d="M12 20 C14 17 19 16 23 23 C21 28 15 27 12 20 Z" fill="#ef4444" stroke="#ffffff"
+                            stroke-width="1.8" />
+                          <path d="M36 20 C34 17 29 16 25 23 C27 28 33 27 36 20 Z" fill="#ef4444" stroke="#ffffff"
+                            stroke-width="1.8" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Miles Morales</span>
+                    </button>
+
+                    <!-- 3. Spider-Gwen -->
+                    <button type="button" class="planet-btn" data-index="2" aria-label="Spider-Gwen">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-gwen" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#ffffff" />
+                              <stop offset="60%" stop-color="#f1f5f9" />
+                              <stop offset="100%" stop-color="#cbd5e1" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-gwen)" stroke="#ec4899" stroke-width="2" />
+                          <path d="M8 12 Q24 6 40 12 Q38 38 24 44 Q10 38 8 12 Z" fill="none" stroke="#06b6d4"
+                            stroke-width="1.5" opacity="0.6" />
+                          <path d="M12 20 C14 17 19 16 23 23 C21 28 15 27 12 20 Z" fill="#ec4899" stroke="#06b6d4"
+                            stroke-width="1.8" />
+                          <path d="M36 20 C34 17 29 16 25 23 C27 28 33 27 36 20 Z" fill="#ec4899" stroke="#06b6d4"
+                            stroke-width="1.8" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Spider-Gwen</span>
+                    </button>
+
+                    <!-- 4. Iron Spider -->
+                    <button type="button" class="planet-btn" data-index="3" aria-label="Iron Spider">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-iron" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#fbbf24" />
+                              <stop offset="40%" stop-color="#dc2626" />
+                              <stop offset="100%" stop-color="#7f1d1d" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-iron)" stroke="#f59e0b" stroke-width="2" />
+                          <path d="M12 18 L24 28 L36 18 M24 28 V44" stroke="#fbbf24" stroke-width="2" />
+                          <path d="M12 20 C14 17 19 16 23 23 C21 28 15 27 12 20 Z" fill="#38bdf8" stroke="#fbbf24"
+                            stroke-width="2" />
+                          <path d="M36 20 C34 17 29 16 25 23 C27 28 33 27 36 20 Z" fill="#38bdf8" stroke="#fbbf24"
+                            stroke-width="2" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Iron Spider</span>
+                    </button>
+
+                    <!-- 5. Spider-Man 2099 -->
+                    <button type="button" class="planet-btn" data-index="4" aria-label="Spider-Man 2099">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-2099" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#1e3a8a" />
+                              <stop offset="60%" stop-color="#0f172a" />
+                              <stop offset="100%" stop-color="#020617" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-2099)" stroke="#ef4444" stroke-width="2" />
+                          <path d="M14 16 L24 32 L34 16 L24 24 Z" fill="#ef4444" />
+                          <path d="M10 24 L24 38 L38 24" stroke="#ef4444" stroke-width="2" fill="none" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Spidey 2099</span>
+                    </button>
+
+                    <!-- 6. Spider-Noir -->
+                    <button type="button" class="planet-btn" data-index="5" aria-label="Spider-Noir">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-noir" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#475569" />
+                              <stop offset="60%" stop-color="#1e293b" />
+                              <stop offset="100%" stop-color="#090d16" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-noir)" stroke="#94a3b8" stroke-width="1.8" />
+                          <circle cx="16" cy="22" r="6" fill="#f8fafc" stroke="#0f172a" stroke-width="2.5" />
+                          <circle cx="32" cy="22" r="6" fill="#f8fafc" stroke="#0f172a" stroke-width="2.5" />
+                          <path d="M22 22 H26" stroke="#0f172a" stroke-width="2" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Spider-Noir</span>
+                    </button>
+
+                    <!-- 7. Spider-Punk -->
+                    <button type="button" class="planet-btn" data-index="6" aria-label="Spider-Punk">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-punk" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#ef4444" />
+                              <stop offset="50%" stop-color="#2563eb" />
+                              <stop offset="100%" stop-color="#0f172a" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-punk)" stroke="#facc15" stroke-width="2" />
+                          <!-- Spikes -->
+                          <path d="M14 6 L17 12 L20 6 L24 13 L28 6 L31 12 L34 6" stroke="#facc15" stroke-width="2.2"
+                            stroke-linejoin="round" fill="none" />
+                          <path d="M12 22 L22 24 L14 28 Z" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+                          <path d="M36 22 L26 24 L34 28 Z" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Spider-Punk</span>
+                    </button>
+
+                    <!-- 8. Superior Spider-Tech -->
+                    <button type="button" class="planet-btn" data-index="7" aria-label="Superior Spider-Tech">
+                      <span class="planet-icon">
+                        <svg class="planet-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-superior" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#b91c1c" />
+                              <stop offset="50%" stop-color="#881337" />
+                              <stop offset="100%" stop-color="#111827" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-superior)" stroke="#06b6d4" stroke-width="2" />
+                          <path d="M12 20 C14 16 20 16 24 22 C22 28 14 28 12 20 Z" fill="#06b6d4" stroke="#ffffff"
+                            stroke-width="1.5" />
+                          <path d="M36 20 C34 16 28 16 24 22 C26 28 34 28 36 20 Z" fill="#06b6d4" stroke="#ffffff"
+                            stroke-width="1.5" />
+                          <circle cx="24" cy="34" r="3" fill="#06b6d4" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Superior Tech</span>
+                    </button>
+
+                    <!-- 9. Special Spider-Heart -->
+                    <button type="button" class="planet-btn" data-index="8" aria-label="Special Spider-Heart">
+                      <span class="planet-icon">
+                        <svg class="planet-svg star-glow" viewBox="0 0 48 48" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <radialGradient id="sp-heart" cx="35%" cy="30%" r="70%">
+                              <stop offset="0%" stop-color="#ffe4e6" />
+                              <stop offset="35%" stop-color="#fb7185" />
+                              <stop offset="70%" stop-color="#e11d48" />
+                              <stop offset="100%" stop-color="#881337" />
+                            </radialGradient>
+                          </defs>
+                          <circle cx="24" cy="24" r="20" fill="url(#sp-heart)" stroke="#fde047" stroke-width="2.5" />
+                          <path d="M24 12 C20 7 12 9 12 16 C12 23 24 32 24 32 C24 32 36 23 36 16 C36 9 28 7 24 12 Z"
+                            fill="#ffffff" stroke="#fde047" stroke-width="1.5" />
+                          <circle cx="24" cy="20" r="2.5" fill="#e11d48" />
+                        </svg>
+                      </span>
+                      <span class="planet-name">Special Heart</span>
+                    </button>
+                  </div>
+
+                  <!-- Dynamic Suit Details Display Card -->
+                  <div class="planet-details-card spidey-details-card" id="planetDetails">
+                    <div class="planet-visual-large" id="planetVisualLarge">
+                      <span class="planet-orb-large" id="planetOrbLarge">🕷️</span>
+                    </div>
+                    <div class="planet-text-content">
+                      <div class="planet-tag" id="planetTag">✦ SPIDER VARIANT 1 / 9 ✦</div>
+                      <h3 class="planet-title" id="planetTitle">Classic Peter Parker</h3>
+                      <p class="planet-note" id="planetNote">Keberanian, ketulusan, dan rasa tanggung jawab yang luar
+                        biasa.
+                        Sama seperti caramu selalu tulus dan peduli pada orang-orang di sekitarmu.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- 3. DAILY BUGLE POLAROID MEMORIES -->
+              <section class="story-section memories-section" id="secMemories" data-planet="📰 Daily Bugle"
+                data-emoji="📰">
+                <div class="section-card spidey-glass-card">
+                  <p class="eyebrow">📰 — THE DAILY BUGLE SPECIAL ARCHIVE — 📰</p>
+                  <h2 class="section-title">Special Memories with Nanda</h2>
+                  <p class="sub">Potongan momen indah yang selalu tersimpan rapi di ingatanku ✨</p>
+
+                  <!-- Interactive Spider-Cam Photobooth Launcher Banner -->
+                  <div class="spider-cam-launch-card" id="spiderCamLaunchCard">
+                    <div class="cam-launch-glow"></div>
+                    <div class="cam-launch-content">
+                      <div class="cam-launch-icon-box">
+                        <span class="cam-lens-icon">📸</span>
+                        <span class="cam-pulse-radar"></span>
+                      </div>
+                      <div class="cam-launch-info">
+                        <div class="cam-launch-tag">✦ SPIDER-CAM PHOTO BOOTH · MULTIVERSE SELFIE ✦</div>
+                        <h3 class="cam-launch-title">Bikin Foto Polaroid Spesialmu! 🕷️✨</h3>
+                        <p class="cam-launch-desc">Ambil selfie dengan filter topeng Gwen & Miles, stiker Canon Event,
+                          lalu cetak polaroid langsung ke galeri HP!</p>
+                      </div>
+                    </div>
+                    <button type="button" class="cam-open-btn" id="openSpiderCamBtn">
+                      <span class="cam-btn-dot"></span>
+                      <span>📸 BUKA SPIDER-CAM</span>
+                    </button>
+                  </div>
+
+                  <div class="polaroid-grid" id="polaroidGrid">
+                    <div class="polaroid-card spidey-polaroid memory-polaroid-card" id="memoryCard0" data-index="0"
+                      data-img="nanda1.jpg" data-title="Senyum Manismu"
+                      data-desc="Senyum kamu selalu punya cara tersendiri buat bikin hari yang melelahkan jadi terasa lebih cerah dan menyenangkan.">
+                      <div class="pin-star">🕸️</div>
+                      <div class="tape-strip"></div>
+                      <div class="polaroid-photo-frame">
+                        <img src="nanda1.jpg" alt="Foto Kenangan Nanda 1" class="polaroid-img"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="polaroid-placeholder-art sp-art-1">
+                          <span class="placeholder-emoji">🌸</span>
+                          <span class="placeholder-badge">Senyum Manis</span>
+                        </div>
+                        <div class="photo-zoom-hint">🔍 Klik perbesar</div>
+                      </div>
+                      <div class="polaroid-caption">
+                        <h3>Senyum Manismu</h3>
+                        <p>Senyum kamu selalu punya cara tersendiri buat bikin hari yang melelahkan jadi terasa lebih
+                          cerah
+                          dan menyenangkan.</p>
+
+                        <div class="polaroid-memory-actions">
+                          <button type="button" class="memory-card-btn btn-change-photo" data-card-index="0"
+                            title="Pasang atau ganti foto kenangan">
+                            <span>📷</span> <span class="change-btn-text">Pasang Foto</span>
+                          </button>
+                          <button type="button" class="memory-card-btn btn-reset-photo" data-card-index="0"
+                            style="display: none;" title="Hapus foto & kembali ke seni default">
+                            <span>🗑️</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="polaroid-card spidey-polaroid memory-polaroid-card" id="memoryCard1" data-index="1"
+                      data-img="nanda2.jpg" data-title="Obrolan Bersamamu"
+                      data-desc="Dari cerita receh sampai obrolan panjang tentang banyak hal, waktu ngobrol sama kamu selalu jadi momen yang paling aku tunggu.">
+                      <div class="pin-star">🕸️</div>
+                      <div class="tape-strip"></div>
+                      <div class="polaroid-photo-frame">
+                        <img src="nanda2.jpg" alt="Foto Kenangan Nanda 2" class="polaroid-img"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="polaroid-placeholder-art sp-art-2">
+                          <span class="placeholder-emoji">☕</span>
+                          <span class="placeholder-badge">Momen Ngobrol</span>
+                        </div>
+                        <div class="photo-zoom-hint">🔍 Klik perbesar</div>
+                      </div>
+                      <div class="polaroid-caption">
+                        <h3>Obrolan Bersamamu</h3>
+                        <p>Dari cerita receh sampai obrolan panjang tentang banyak hal, waktu ngobrol sama kamu selalu
+                          jadi
+                          momen yang paling aku tunggu.</p>
+
+                        <div class="polaroid-memory-actions">
+                          <button type="button" class="memory-card-btn btn-change-photo" data-card-index="1"
+                            title="Pasang atau ganti foto kenangan">
+                            <span>📷</span> <span class="change-btn-text">Pasang Foto</span>
+                          </button>
+                          <button type="button" class="memory-card-btn btn-reset-photo" data-card-index="1"
+                            style="display: none;" title="Hapus foto & kembali ke seni default">
+                            <span>🗑️</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="polaroid-card spidey-polaroid memory-polaroid-card" id="memoryCard2" data-index="2"
+                      data-img="nanda3.jpg" data-title="Ketulusan Hatimu"
+                      data-desc="Kebaikanmu, caramu peduli, dan kehangatan yang kamu bawa bikin kamu begitu istimewa dan selalu berharga di mataku.">
+                      <div class="pin-star">🕸️</div>
+                      <div class="tape-strip"></div>
+                      <div class="polaroid-photo-frame">
+                        <img src="nanda3.jpg" alt="Foto Kenangan Nanda 3" class="polaroid-img"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="polaroid-placeholder-art sp-art-3">
+                          <span class="placeholder-emoji">💖</span>
+                          <span class="placeholder-badge">Hati Tulus</span>
+                        </div>
+                        <div class="photo-zoom-hint">🔍 Klik perbesar</div>
+                      </div>
+                      <div class="polaroid-caption">
+                        <h3>Ketulusan Hatimu</h3>
+                        <p>Kebaikanmu, caramu peduli, dan kehangatan yang kamu bawa bikin kamu begitu istimewa dan
+                          selalu
+                          berharga di mataku.</p>
+
+                        <div class="polaroid-memory-actions">
+                          <button type="button" class="memory-card-btn btn-change-photo" data-card-index="2"
+                            title="Pasang atau ganti foto kenangan">
+                            <span>📷</span> <span class="change-btn-text">Pasang Foto</span>
+                          </button>
+                          <button type="button" class="memory-card-btn btn-reset-photo" data-card-index="2"
+                            style="display: none;" title="Hapus foto & kembali ke seni default">
+                            <span>🗑️</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="file" id="memoryCardFileInput" accept="image/*" style="display: none;">
+
+                  <div class="quote-box spidey-quote-box">
+                    <div class="quote-text">“In a multiverse of infinite possibilities, having you in my life is my
+                      favorite
+                      reality.”</div>
+                    <div class="quote-author">— Gustavo</div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 4. HEARTFELT SPIDER-MAN LETTER -->
+              <section class="story-section letter-section" id="secLetter" data-planet="💌 Spider Letter"
+                data-emoji="💌">
+                <article class="letter-card spidey-letter-card">
+                  <div class="wax-seal">🕷️</div>
+                  <div class="letter-header">
+                    <span class="letter-date">29 September</span>
+                    <span class="letter-stamp">✦ SPIDER-MAN ARCHIVE ✦</span>
+                  </div>
+
+                  <h2 class="letter-title">Dear Nanda,</h2>
+
+                  <div class="letter-body">
+                    <p>Happy birthday! I hope this new chapter of your life brings you plenty of good moments, good
+                      people,
+                      and lots of reasons to smile.</p>
+
+                    <p>I’m really glad we met and became close. You’re genuinely fun to talk to, and you have a unique
+                      way of
+                      making ordinary moments feel memorable and special.</p>
+
+                    <p>I hope the year ahead treats you well. May everything you’re working toward go smoothly, and may
+                      you
+                      get to make countless happy memories you’ll look back on with a warm smile.</p>
+
+                    <p>I wanted to make something truly special and fun for your birthday this year — a small reminder
+                      that
+                      you are deeply appreciated and cherished.</p>
+
+                    <p>Have the most wonderful birthday, Nanda. Enjoy your day, take lots of pictures, eat delicious
+                      food, and
+                      most importantly, be super happy!</p>
+                  </div>
+
+                  <div class="letter-signature">
+                    <span>With great affection,</span>
+                    <strong>— Gustavo 🕷️❤️</strong>
+                  </div>
+                </article>
+              </section>
+
+              <!-- 5. SPIDER-VERSE ARCADE GATEWAY -->
+              <section class="story-section minigame-section" id="secArcadeGate">
+                <div class="section-card spidey-glass-card arcade-gate-card">
+                  <p class="eyebrow">🎮 — MULTIVERSE MISSION CHALLENGE — 🎮</p>
+                  <h2 class="section-title">Spider-Man Mini Games</h2>
+                  <p class="sub">3 Misi Arcade seru telah disiapkan khusus untuk Nanda! Selesaikan tantangan ini untuk
+                    membuktikan kemampuan Spider-Hero kamu sebelum membuka pesan terakhir. 🕹️🕷️</p>
+
+                  <div class="arcade-gate-preview">
+                    <span class="m-pill">🎴 Misi 1: Spider Match</span>
+                    <span class="m-pill">⚡ Misi 2: Villain Strike</span>
+                    <span class="m-pill">🕸️ Misi 3: Web Slingshot</span>
+                  </div>
+
+                  <div class="arcade-gate-actions">
+                    <button class="spidey-btn arcade-start-btn" id="btnStartArcade" type="button">
+                      <span>🎮 Mulai Misi 1: Spider Match ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 5: MINIGAME 1 — SPIDER MATCH (12 CARDS)
+         ========================================= -->
+          <section class="screen minigame-screen" id="screenGameMemory">
+            <div class="minigame-screen-wrapper">
+              <div class="minigame-nav-bar">
+                <button type="button" class="minigame-nav-btn minigame-back-btn" data-target="mainStory">‹ Kembali ke
+                  Cerita</button>
+                <span class="minigame-step-badge">MISI 1 / 3</span>
+              </div>
+
+              <div class="section-card spidey-glass-card minigame-card">
+                <p class="eyebrow">🎴 — MISSION 1: MEMORY ARCHIVE — 🎴</p>
+                <div class="game-header-bar">
+                  <div>
+                    <h2 class="section-title" style="font-size: 24px; margin-bottom: 4px;">Spider-Verse Match</h2>
+                    <p class="game-instruction">Cocokkan 6 pasang kartu pahlawan Spider-Verse! (Tersisa: <strong
+                        id="pairsLeft">6</strong> pasang)</p>
+                  </div>
+                  <button type="button" class="btn-restart-game" id="btnRestartMemory">🔄 Ulangi</button>
+                </div>
+
+                <div class="memory-grid memory-grid-12" id="memoryGrid">
+                  <!-- 12 cards injected dynamically by script.js -->
+                </div>
+
+                <div class="game-victory-box" id="memoryVictoryBox" style="display: none;">
+                  <div class="victory-icon">🎉 🕷️ 🕸️</div>
+                  <h3>Hebat! Semua Simbol Spider-Verse Cocok!</h3>
+                  <p>Kamu berhasil menyelesaikan misi tebak kartu laba-laba!</p>
+                  <div class="victory-actions">
+                    <button class="btn-next-minigame spidey-btn" data-target="screenGameMole" type="button">
+                      <span>Lanjut ke Misi 2: Villain Strike ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 6: MINIGAME 2 — VILLAIN WEB-STRIKE
+         ========================================= -->
+          <section class="screen minigame-screen" id="screenGameMole">
+            <div class="minigame-screen-wrapper">
+              <div class="minigame-nav-bar">
+                <button type="button" class="minigame-nav-btn minigame-back-btn" data-target="screenGameMemory">‹ Misi
+                  1</button>
+                <span class="minigame-step-badge">MISI 2 / 3</span>
+              </div>
+
+              <div class="section-card spidey-glass-card minigame-card">
+                <p class="eyebrow">⚡ — MISSION 2: NYC DEFENDER — ⚡</p>
+                <div class="game-header-bar">
+                  <div>
+                    <h2 class="section-title" style="font-size: 24px; margin-bottom: 4px;">Villain Web-Strike</h2>
+                    <p class="game-instruction">Tembak jaring ke musuh kota (Green Goblin, Venom, Doc Ock, Electro)!
+                      Target:
+                      10 poin.</p>
+                  </div>
+                  <div class="score-badge">Skor: <strong id="moleScore">0</strong> / 10</div>
+                </div>
+
+                <div class="mole-arena-controls">
+                  <button type="button" class="btn-start-mole" id="btnStartMole">▶ Mulai Web-Strike</button>
+                </div>
+
+                <div class="mole-grid" id="moleGrid">
+                  <div class="mole-hole" data-hole="0">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#16a34a" stroke="#15803d" stroke-width="1.5" />
+                        <path d="M8 8 L14 14 M28 8 L22 14" stroke="#84cc16" stroke-width="2" stroke-linecap="round" />
+                        <polygon points="12,16 16,14 14,18" fill="#eab308" />
+                        <polygon points="24,16 20,14 22,18" fill="#eab308" />
+                        <path d="M12 24 Q18 20 24 24" stroke="#7f1d1d" stroke-width="2" fill="none" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mole-hole" data-hole="1">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#090d16" stroke="#ffffff" stroke-width="1.5" />
+                        <path d="M8 13 C11 9 16 9 16 16 C14 19 9 17 8 13 Z" fill="#ffffff" />
+                        <path d="M28 13 C25 9 20 9 20 16 C22 19 27 17 28 13 Z" fill="#ffffff" />
+                        <path d="M12 24 L14 21 L16 24 L18 21 L20 24 L22 21 L24 24" stroke="#ffffff"
+                          stroke-width="1.5" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mole-hole" data-hole="2">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#15803d" stroke="#166534" stroke-width="1.5" />
+                        <circle cx="13" cy="16" r="4.5" fill="#0284c7" stroke="#94a3b8" stroke-width="1.5" />
+                        <circle cx="23" cy="16" r="4.5" fill="#0284c7" stroke="#94a3b8" stroke-width="1.5" />
+                        <path d="M13 16 H23" stroke="#94a3b8" stroke-width="1.5" />
+                        <path d="M14 24 Q18 22 22 24" stroke="#0f172a" stroke-width="2" fill="none" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mole-hole" data-hole="3">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#0284c7" stroke="#eab308" stroke-width="1.5" />
+                        <path d="M18 4 L19 14 L26 12 L20 18 L26 24 L19 22 L18 32 L17 22 L10 24 L16 18 L10 12 L17 14 Z"
+                          fill="#eab308" stroke="#ca8a04" stroke-width="1" />
+                        <circle cx="14" cy="17" r="2" fill="#ffffff" />
+                        <circle cx="22" cy="17" r="2" fill="#ffffff" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mole-hole" data-hole="4">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#581c87" stroke="#06b6d4" stroke-width="1.5" />
+                        <circle cx="18" cy="18" r="11" fill="url(#vm-mysterio)" stroke="#06b6d4" stroke-width="1.5" />
+                        <ellipse cx="15" cy="15" rx="4" ry="2" fill="#ffffff" opacity="0.6"
+                          transform="rotate(-30 15 15)" />
+                        <defs>
+                          <radialGradient id="vm-mysterio" cx="40%" cy="35%" r="60%">
+                            <stop offset="0%" stop-color="#a5f3fc" />
+                            <stop offset="50%" stop-color="#0891b2" />
+                            <stop offset="100%" stop-color="#164e63" />
+                          </radialGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mole-hole" data-hole="5">
+                    <div class="mole-char villain-char">
+                      <svg viewBox="0 0 36 36" fill="none" class="villain-svg">
+                        <circle cx="18" cy="18" r="15" fill="#f97316" stroke="#c2410c" stroke-width="1.5" />
+                        <polygon points="12,15 15,13 14,17" fill="#fef08a" />
+                        <polygon points="24,15 21,13 22,17" fill="#fef08a" />
+                        <polygon points="18,17 19,19 17,19" fill="#fef08a" />
+                        <path d="M12 23 L14 21 L16 23 L18 21 L20 23 L22 21 L24 23" stroke="#7c2d12" stroke-width="2"
+                          stroke-linecap="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="game-victory-box" id="moleVictoryBox" style="display: none;">
+                  <div class="victory-icon">🎉 ⚡ 🏆</div>
+                  <h3>Keren! Kota New York Aman!</h3>
+                  <p>Refleks Spider-Sense kamu cepat banget mengalahkan penjahat!</p>
+                  <div class="victory-actions">
+                    <button class="btn-next-minigame spidey-btn" data-target="screenGameSlingshot" type="button">
+                      <span>Lanjut ke Misi 3: Web Slingshot ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 7: MINIGAME 3 — ROOFTOP WEB SLINGSHOT
+         ========================================= -->
+          <section class="screen minigame-screen" id="screenGameSlingshot">
+            <div class="minigame-screen-wrapper">
+              <div class="minigame-nav-bar">
+                <button type="button" class="minigame-nav-btn minigame-back-btn" data-target="screenGameMole">‹ Misi
+                  2</button>
+                <span class="minigame-step-badge">MISI 3 / 3</span>
+              </div>
+
+              <div class="section-card spidey-glass-card minigame-card">
+                <p class="eyebrow">🕸️ — MISSION 3: ROOFTOP LAUNCHER — 🕸️</p>
+                <div class="game-header-bar">
+                  <div>
+                    <h2 class="section-title" style="font-size: 24px; margin-bottom: 4px;">Web-Slinging Slingshot</h2>
+                    <p class="game-instruction">Tarik jaring Spider-Man ke belakang/kiri, lalu lepas buat menjangkau
+                      target!
+                      Target: 10 poin.</p>
+                  </div>
+                  <div style="display: flex; gap: 8px; justify-content: center; align-items: center;">
+                    <div class="score-badge">Target: <strong id="slingshotScore">0</strong> / 10</div>
+                    <button type="button" class="btn-restart-game" id="btnRestartSlingshot">🔄 Ulangi</button>
+                  </div>
+                </div>
+
+                <div class="slingshot-stage" id="slingshotStage">
+                  <!-- SVG Rubber Web Lines -->
+                  <svg class="slingshot-svg" id="slingshotSvg">
+                    <line id="rubberLine1" x1="70" y1="115" x2="76" y2="115" stroke="#ffffff" stroke-width="3.5"
+                      stroke-linecap="round" />
+                    <line id="rubberLine2" x1="82" y1="115" x2="76" y2="115" stroke="#ffffff" stroke-width="3.5"
+                      stroke-linecap="round" />
+                  </svg>
+
+                  <!-- Web Shooter Launcher Base -->
+                  <div class="slingshot-fork spidey-fork">
+                    <div class="fork-left"></div>
+                    <div class="fork-right"></div>
+                    <div class="fork-stem"></div>
+                  </div>
+
+                  <!-- The Draggable Spider-Hero -->
+                  <div class="slingshot-bird" id="slingshotBird">
+                    <svg viewBox="0 0 36 36" fill="none" class="slingshot-spidey-svg">
+                      <circle cx="18" cy="18" r="16" fill="url(#ss-spidey)" stroke="#1e293b" stroke-width="1.5" />
+                      <path d="M2 18 H34 M18 2 V34 M7 7 L29 29 M7 29 L29 7" stroke="rgba(0,0,0,0.35)"
+                        stroke-width="1" />
+                      <path d="M9 15 C11 12 15 11 18 17 C16 20 11 19 9 15 Z" fill="#ffffff" stroke="#0f172a"
+                        stroke-width="1.5" />
+                      <path d="M27 15 C25 12 21 11 18 17 C20 20 25 19 27 15 Z" fill="#ffffff" stroke="#0f172a"
+                        stroke-width="1.5" />
+                      <defs>
+                        <radialGradient id="ss-spidey" cx="35%" cy="30%" r="70%">
+                          <stop offset="0%" stop-color="#f87171" />
+                          <stop offset="60%" stop-color="#dc2626" />
+                          <stop offset="100%" stop-color="#7f1d1d" />
+                        </radialGradient>
+                      </defs>
+                    </svg>
+                    <div class="pull-hint-badge">👈 Tarik Jaring</div>
+                  </div>
+
+                  <!-- NYC Rooftop Targets -->
+                  <div class="target-platform"></div>
+                  <div class="target-blocks-container" id="targetBlocksContainer">
+                    <div class="target-block" id="targetBlock1">
+                      <svg viewBox="0 0 28 28" fill="none" class="target-svg">
+                        <circle cx="14" cy="14" r="12" fill="#f97316" stroke="#c2410c" stroke-width="1.5" />
+                        <polygon points="9,12 11,10 10,14" fill="#fef08a" />
+                        <polygon points="19,12 17,10 18,14" fill="#fef08a" />
+                        <path d="M10 18 Q14 16 18 18" stroke="#7c2d12" stroke-width="1.8" fill="none" />
+                      </svg>
+                    </div>
+                    <div class="target-block" id="targetBlock2">
+                      <svg viewBox="0 0 28 28" fill="none" class="target-svg">
+                        <circle cx="14" cy="14" r="12" fill="#090d16" stroke="#ffffff" stroke-width="1.5" />
+                        <path d="M6 10 C9 7 13 7 13 12 C11 14 7 13 6 10 Z" fill="#ffffff" />
+                        <path d="M22 10 C19 7 15 7 15 12 C17 14 21 13 22 10 Z" fill="#ffffff" />
+                      </svg>
+                    </div>
+                    <div class="target-block" id="targetBlock3">
+                      <svg viewBox="0 0 28 28" fill="none" class="target-svg">
+                        <circle cx="14" cy="14" r="12" fill="#e11d48" stroke="#fde047" stroke-width="1.5" />
+                        <path d="M14 7 C12 4 7 5 7 10 C7 14 14 20 14 20 C14 20 21 14 21 10 C21 5 16 4 14 7 Z"
+                          fill="#ffffff" stroke="#fde047" stroke-width="1" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="stage-ground"></div>
+                </div>
+
+                <div class="game-victory-box" id="slingshotVictoryBox" style="display: none;">
+                  <div class="victory-icon">🎯 🕷️ 💖</div>
+                  <h3>Luar Biasa! 10 Target Berhasil Diraih!</h3>
+                  <p>Kamu resmi menyelesaikan seluruh misi Spider-Verse! Saatnya membuka pesan terakhir.</p>
+                  <div class="victory-actions">
+                    <button class="btn-to-finale spidey-btn" type="button" style="width: 100%; max-width: 320px;">
+                      <span>Buka Pesan Terakhir 💌 ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================================
+         SCREEN 8: THE NYC ROOFTOP FINALE & CONFESSION
+         ========================================= -->
+          <section class="screen finale-screen" id="finale">
+            <div class="finale-wrapper">
+              <div class="finale-card" id="finaleCard">
+                <div class="final-star">
+                  <svg viewBox="0 0 24 24" class="pixel-star-svg" shape-rendering="crispEdges">
+                    <rect x="10" y="8" width="4" height="8" fill="#e11d48" />
+                    <rect x="11" y="6" width="2" height="2" fill="#ffffff" />
+                    <path d="M5 6 H9 V8 H6 V12 H4 V7 H5 Z M19 6 H15 V8 H18 V12 H20 V7 H19 Z" fill="#06b6d4" />
+                    <path d="M4 11 H9 V13 H5 V17 H3 V12 H4 Z M20 11 H15 V13 H19 V17 H21 V12 H20 Z" fill="#06b6d4" />
+                    <path d="M5 18 H9 V20 H6 V22 H4 V19 H5 Z M19 18 H15 V20 H18 V22 H20 V19 H19 Z" fill="#06b6d4" />
+                  </svg>
+                </div>
+                <p class="eyebrow">✦ ONE LAST MISSION ✦</p>
+                <h2 class="confession-title">I like you.</h2>
+                <div class="final-flower">
+                  <svg viewBox="0 0 44 20" class="pixel-heart-web-svg" shape-rendering="crispEdges">
+                    <!-- Pixel Heart -->
+                    <path
+                      d="M4 3 H7 V1 H10 V3 H13 V6 H14 V9 H13 V11 H11 V13 H9 V15 H8 V17 H7 V15 H5 V13 H3 V11 H1 V9 H0 V6 H1 V3 H4 Z"
+                      fill="#f43f5e" transform="translate(4, 1)" />
+                    <rect x="8" y="4" width="2" height="2" fill="#ffffff" />
+                    <!-- Pixel Web -->
+                    <path d="M34 1 V19 M25 10 H43 M27 3 L41 17 M27 17 L41 3 M30 6 H38 V14 H30 Z" stroke="#38bdf8"
+                      stroke-width="1.5" fill="none" />
+                  </svg>
+                </div>
+
+                <div class="final-copy">
+                  <p>Ada satu hal penting yang sudah lama ingin aku sampaikan ke kamu, dan hari spesial ini rasanya
+                    momen yang
+                    paling tepat.</p>
+
+                  <p>Di antara jutaan kemungkinan di multiverse,<br>
+                    kamu adalah orang yang selalu bikin duniaku terasa lebih berwarna.<br>
+                    Aku selalu menantikan setiap cerita, tawa,<br>
+                    dan momen-momen sederhana bersamamu.</p>
+
+                  <p>Sebenarnya... aku suka sama kamu.<br>
+                    Lebih dari sekadar teman biasa.</p>
+
+                  <p>Aku suka kamu apa adanya,<br>
+                    dan aku ingin dapat kesempatan untuk mengenalmu<br>
+                    lebih dekat lagi — dengan cara yang lebih spesial.</p>
+                </div>
+
+                <div class="final-question spidey-question">
+                  Will you be my girlfriend? <span>🕷️❤️</span>
+                </div>
+
+                <div class="final-actions">
+                  <button class="answer-btn answer-yes spidey-yes" id="answerYes" type="button">
+                    Yes &nbsp;❤️
+                  </button>
+                  <button class="answer-btn answer-no evasive-btn" id="answerNo" type="button">
+                    Nggak Mau &nbsp;🙈
+                  </button>
+                </div>
+
+                <p class="answer-note" id="answerNote">
+                  Apapun jawabanmu nanti,<br>aku akan selalu menghargainya dan bersyukur bisa kenal kamu. ✨
+                </p>
+
+                <!-- Custom Response Box -->
+                <div id="customMessageBox" class="custom-message-box">
+                  <p class="custom-box-title">💌 Ada sesuatu yang mau kamu sampaikan ke Gustavo?</p>
+
+                  <textarea id="customMessage" maxlength="1000" placeholder="Tulis pesan atau jawabanmu di sini..."
+                    aria-label="Pesan untuk Gustavo"></textarea>
+
+                  <div class="custom-message-bottom">
+                    <span id="messageCount">0 / 1000</span>
+                    <button id="messageSend" type="button">
+                      💌 Kirim Pesan
+                    </button>
+                  </div>
+
+                  <p id="messageStatus" class="custom-message-status"></p>
+                </div>
+
+                <!-- SPIDER-VERSE OFFICIAL MULTIVERSE ID CARD -->
+                <div class="hero-id-section" id="heroIdSection">
+                  <div class="hero-id-header-tag">
+                    <span class="pulse-chip"></span>
+                    <span>✦ OFFICIAL SPIDER-SOCIETY ID CARD ✦</span>
+                  </div>
+
+                  <!-- The Holographic 3D Interactive Card (Klik untuk Auto Download) -->
+                  <div class="spidey-id-card-wrap" id="spideyIdCardWrap">
+                    <div class="spidey-id-card" id="spideyIdCard" role="button" tabindex="0"
+                      title="Klik untuk Auto Download Kartu ID!">
+                      <!-- Dynamic Prismatic Foil Glare & Hologram Grid -->
+                      <div class="id-card-foil-glare"></div>
+                      <div class="id-card-cyber-grid"></div>
+
+                      <!-- Background Giant Pixel Watermark Spider Logo -->
+                      <svg class="id-watermark-svg" viewBox="0 0 40 40" shape-rendering="crispEdges" aria-hidden="true">
+                        <rect x="18" y="10" width="4" height="16" fill="rgba(225,29,72,0.18)" />
+                        <rect x="19" y="7" width="2" height="2" fill="rgba(225,29,72,0.18)" />
+                        <path d="M10 10 H18 V12 H12 V18 H10 V11 H10 Z M30 10 H22 V12 H28 V18 H30 V11 H30 Z"
+                          fill="rgba(6,182,212,0.18)" />
+                        <path d="M8 17 H18 V19 H10 V25 H8 V18 H8 Z M32 17 H22 V19 H30 V25 H32 V18 H32 Z"
+                          fill="rgba(6,182,212,0.18)" />
+                        <path d="M10 24 H18 V26 H12 V32 H10 V25 H10 Z M30 24 H22 V26 H28 V32 H30 V25 H30 Z"
+                          fill="rgba(6,182,212,0.18)" />
+                      </svg>
+
+                      <!-- Corner Tech Brackets (Pixel Siku) -->
+                      <span class="corner-bracket cb-tl"></span>
+                      <span class="corner-bracket cb-tr"></span>
+                      <span class="corner-bracket cb-bl"></span>
+                      <span class="corner-bracket cb-br"></span>
+
+                      <!-- Header -->
+                      <div class="id-card-header">
+                        <div class="id-org-badge">
+                          <div class="id-logo-box">
+                            <svg viewBox="0 0 32 32" class="id-logo-svg" shape-rendering="crispEdges">
+                              <rect x="0" y="0" width="32" height="32" fill="#e11d48" stroke="#06b6d4"
+                                stroke-width="2" />
+                              <!-- Pixel Spider -->
+                              <rect x="14" y="8" width="4" height="12" fill="#ffffff" />
+                              <rect x="15" y="5" width="2" height="2" fill="#ffffff" />
+                              <!-- Spider Legs -->
+                              <path d="M7 8 H13 V10 H8 V14 H6 V9 H7 Z M25 8 H19 V10 H24 V14 H26 V9 H25 Z"
+                                fill="#ffffff" />
+                              <path d="M5 13 H13 V15 H7 V19 H5 V14 H5 Z M27 13 H19 V15 H25 V19 H27 V14 H27 Z"
+                                fill="#ffffff" />
+                              <path d="M7 19 H13 V21 H8 V25 H6 V20 H7 Z M25 19 H19 V21 H24 V25 H26 V20 H25 Z"
+                                fill="#ffffff" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h4>SPIDER-SOCIETY</h4>
+                            <small class="id-sub-dept">MULTIVERSE HERO REGISTRY · SEC-DIVISION</small>
+                          </div>
+                        </div>
+
+                        <div class="id-dim-badge">
+                          <span class="dim-beacon"></span>
+                          <span>EARTH-2909</span>
+                        </div>
+                      </div>
+
+                      <!-- Card Body -->
+                      <div class="id-card-body">
+                        <!-- High-Tech Holographic Avatar Frame -->
+                        <div class="id-avatar-box">
+                          <div class="id-avatar-reticle"></div>
+                          <div class="id-avatar-scanner"></div>
+
+                          <!-- Super Cute 16-Bit Pixel Art Spider-Nanda Portrait -->
+                          <div class="id-hero-portrait">
+                            <svg viewBox="0 0 40 40" class="id-portrait-svg" shape-rendering="crispEdges">
+                              <!-- Hood Outer Contour (White with Cyan Tint) -->
+                              <path
+                                d="M15 4 H25 V6 H29 V9 H31 V14 H33 V26 H31 V30 H29 V33 H25 V35 H15 V33 H11 V30 H9 V26 H7 V14 H9 V9 H11 V6 H15 Z"
+                                fill="#f8fafc" stroke="#06b6d4" stroke-width="0.8" />
+
+                              <!-- Hood Inner Lining (Magenta / Dark Pink) -->
+                              <path
+                                d="M16 8 H24 V10 H27 V14 H28 V24 H27 V28 H24 V31 H16 V28 H13 V24 H12 V14 H13 V10 H16 Z"
+                                fill="#9d174d" />
+
+                              <!-- White Mask Face -->
+                              <path
+                                d="M16 11 H24 V13 H26 V17 H27 V23 H26 V26 H24 V28 H16 V26 H14 V23 H13 V17 H14 V13 H16 Z"
+                                fill="#ffffff" />
+
+                              <!-- Mask Delicate Web Pattern (Pinkish Cyber Web) -->
+                              <path d="M20 11 V28 M14 18 H26 M14 22 H26 M15 14 L25 24 M25 14 L15 24"
+                                stroke="rgba(244, 63, 94, 0.35)" stroke-width="0.6" fill="none" />
+
+                              <!-- Left Comic Spider Eye (Almond / Angular Heroic Mask Lens) -->
+                              <polygon points="14,16 19,19 18,22 14,20" fill="#090d16" />
+                              <polygon points="15,17 18,19.5 17.5,21 15,19.5" fill="#38bdf8" />
+                              <rect x="15" y="17" width="1.5" height="1.5" fill="#ffffff" />
+
+                              <!-- Right Comic Spider Eye (Almond / Angular Heroic Mask Lens) -->
+                              <polygon points="26,16 21,19 22,22 26,20" fill="#090d16" />
+                              <polygon points="25,17 22,19.5 22.5,21 25,19.5" fill="#38bdf8" />
+                              <rect x="23.5" y="17" width="1.5" height="1.5" fill="#ffffff" />
+
+                              <!-- Soft Pixel Pink Cheek Blush -->
+                              <rect x="14" y="23" width="2" height="1" fill="#fda4af" opacity="0.8" />
+                              <rect x="24" y="23" width="2" height="1" fill="#fda4af" opacity="0.8" />
+
+                              <!-- Cute Sakura Cherry Blossom Clip (Top-Right of Hood) -->
+                              <rect x="27" y="7" width="2" height="2" fill="#fb7185" />
+                              <rect x="29" y="7" width="2" height="2" fill="#f43f5e" />
+                              <rect x="27" y="9" width="2" height="2" fill="#f43f5e" />
+                              <rect x="29" y="9" width="2" height="2" fill="#fb7185" />
+                              <rect x="28" y="8" width="1.5" height="1.5" fill="#ffffff" />
+                            </svg>
+                          </div>
+
+                          <!-- Verified Hologram Stamp -->
+                          <div class="id-verified-tick" title="Verified Multiverse Identity">✓</div>
+                          <div class="id-avatar-tag">ACTIVE HERO</div>
+                        </div>
+
+                        <!-- Bio Information -->
+                        <div class="id-bio-details">
+                          <!-- Smart Security Chip & Auth Status -->
+                          <div class="id-chip-row">
+                            <div class="id-smart-chip" title="Multiverse Quantum Encrypted Chip">
+                              <span class="chip-line l1"></span>
+                              <span class="chip-line l2"></span>
+                              <span class="chip-line l3"></span>
+                            </div>
+                            <div class="id-auth-badge">
+                              <span class="auth-dot"></span>
+                              <span>CANON PROTECTED</span>
+                            </div>
+                          </div>
+
+                          <div class="id-field">
+                            <span class="id-lbl">HERO NAME</span>
+                            <strong class="id-val hero-name-val">Nanda Kurnia Ramadani</strong>
+                          </div>
+
+                          <div class="id-field">
+                            <span class="id-lbl">HERO ALIAS</span>
+                            <strong class="id-val highlight-val">Spider-Nanda 🌸💖</strong>
+                          </div>
+
+                          <div class="id-field">
+                            <span class="id-lbl">SECURITY CLEARANCE</span>
+                            <span class="id-val clearance-val">LEVEL 10 · GUSTAVO'S FAVORITE</span>
+                          </div>
+
+                          <div class="id-field">
+                            <span class="id-lbl">SPECIAL ABILITY</span>
+                            <span class="id-val ability-val">Membikin hariku selalu cerah & bahagia ✨</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Card Footer -->
+                      <div class="id-card-footer">
+                        <div class="id-barcode-wrap">
+                          <div class="id-barcode">
+                            <span class="barcode-lines">||| | || |||| | | ||| || |||| | ||| | ||</span>
+                            <span class="barcode-number">29-09-2026 // EARTH-2909 // CANON-EVENT</span>
+                          </div>
+                          <!-- Mini QR Code Graphic -->
+                          <div class="id-qr-box" title="Spider-Society Multiverse Scan QR">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="id-qr-svg">
+                              <path
+                                d="M2 2H10V10H2V2ZM4 4V8H8V4H4ZM14 2H22V10H14V2ZM16 4V8H20V4H16ZM2 14H10V22H2V14ZM4 16V20H8V16H4ZM14 14H16V16H14V14ZM18 14H20V16H18V14ZM20 16H22V18H20V16ZM14 18H16V20H14V18ZM16 20H18V22H16V20ZM20 20H22V22H20V20ZM18 18H20V20H18V18ZM16 16H18V18H16V16ZM12 2H13V22H12V2Z" />
+                            </svg>
+                          </div>
+                        </div>
+
+                        <div class="id-stamp">
+                          <span class="stamp-glow"></span>
+                          <span class="stamp-text">CERTIFIED CANON</span>
+                        </div>
+                      </div>
+
+                      <!-- Interactive Click to Download Badge -->
+                      <div class="id-card-download-badge">
+                        <span class="dl-badge-icon">⬇️</span>
+                        <span>KLIK UNTUK AUTO DOWNLOAD</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="id-card-actions">
+                    <span class="id-card-hint">✨ Klik kartu ID di atas untuk otomatis download file .PNG resolusi
+                      tinggi!</span>
+                  </div>
+                </div>
+
+                <footer class="story-footer">
+                  <p>Made with love & care by Gustavo for Nanda ✨ 🕷️</p>
+                </footer>
+              </div>
+            </div>
+          </section>
+        </div><!-- /.tracker-screen-inner -->
+      </div><!-- /.tracker-screen-viewport -->
+
+      <!-- Bottom Bezel -->
+      <footer class="tracker-bottom-bezel">
+        <button type="button" class="tracker-action-btn" id="trackerActionBtn" title="Aktifkan Pemindai Multiverse">
+          <span class="btn-scan-dot"></span>
+          <span>⚡ CANON SCAN</span>
+        </button>
+
+        <!-- Center Glowing Matrix LCD Ticker -->
+        <div class="tracker-lcd-pill" title="Live Spidey Tracker Multiverse Feed">
+          <div class="tracker-lcd-marquee" id="trackerLcdText">
+            <span class="lcd-dot">●</span> SPIDER-SOCIETY RADAR V2.9 // TARGET: NANDA KURNIA RAMADANI // DIMENSION:
+            EARTH-2909 // STATUS: CANON EVENT LOCKED 💖 ✨
+          </div>
+        </div>
+
+        <!-- Right Audio Controls Cluster -->
+        <div class="tracker-audio-cluster" id="trackerAudioCluster">
+          <!-- Quick Volume Popover Trigger -->
+          <button type="button" class="tracker-vol-btn" id="trackerVolBtn" title="Atur Volume Suara">
+            <span class="vol-btn-icon" id="trackerVolIcon">🔊</span>
+            <span class="vol-btn-label" id="trackerVolPercent">100%</span>
+          </button>
+
+          <!-- Volume Slider Popup HUD -->
+          <div class="tracker-vol-popup" id="trackerVolPopup" aria-hidden="true">
+            <div class="vol-popup-inner">
+              <div class="vol-popup-header">
+                <span class="vol-popup-title">VOL CONTROL</span>
+                <span class="vol-popup-val" id="hudVolVal">100%</span>
+              </div>
+              <div class="vol-slider-row">
+                <button type="button" class="vol-mute-btn" id="hudMuteBtn" title="Mute / Unmute">🔊</button>
+                <input type="range" min="0" max="100" value="100" class="spidey-range-slider" id="hudVolSlider"
+                  aria-label="Volume Slider">
+              </div>
+              <div class="vol-presets-row">
+                <button type="button" class="vol-preset-tag" data-vol="25">25%</button>
+                <button type="button" class="vol-preset-tag" data-vol="50">50%</button>
+                <button type="button" class="vol-preset-tag" data-vol="75">75%</button>
+                <button type="button" class="vol-preset-tag" data-vol="100">MAX</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Speaker / Audio Toggle Button -->
+          <button type="button" class="tracker-audio-pill" id="trackerAudioBtn" title="Toggle Musik Spidey Tracker">
+            <span class="speaker-cone">🔊</span>
+            <span class="speaker-soundwaves">
+              <span class="sw-bar b1"></span>
+              <span class="sw-bar b2"></span>
+              <span class="sw-bar b3"></span>
+            </span>
+          </button>
+        </div>
+      </footer>
+    </div><!-- /.spidey-tracker-device -->
+
+    <!-- =========================================
+         CINEMATIC SPIDER-SENSE GLITCH PORTAL TRANSITION
+         ========================================= -->
+    <div id="blackholeOverlay" class="blackhole-overlay spidey-portal-overlay" aria-hidden="true">
+      <div class="bh-backdrop"></div>
+
+      <!-- Spider-Sense Particle Vortex Canvas -->
+      <canvas id="bhWarpCanvas" class="bh-warp-canvas"></canvas>
+
+      <!-- Multiverse Collider Quantum Portal Core -->
+      <div class="bh-core spidey-portal-core" id="bhCore">
+        <!-- Shockwave Pulse Rings -->
+        <div class="portal-shockwave-ring ring-1"></div>
+        <div class="portal-shockwave-ring ring-2"></div>
+        <div class="portal-shockwave-ring ring-3"></div>
+
+        <!-- Chromatic Glitch Rings (Circular & Hexagonal) -->
+        <div class="spidey-portal-glitch-1"></div>
+        <div class="spidey-portal-glitch-2"></div>
+        <div class="portal-hex-frame"></div>
+
+        <!-- Rotating Multiverse Coordinate Dial -->
+        <div class="portal-coords-ring">
+          <span class="p-coord c-1">EARTH-65</span>
+          <span class="p-coord c-2">EARTH-1610</span>
+          <span class="p-coord c-3 target-dest">✦ EARTH-2909 ✦</span>
+          <span class="p-coord c-4">EARTH-42</span>
+          <span class="p-coord c-5">EARTH-928</span>
+          <span class="p-coord c-6">EARTH-50101</span>
+        </div>
+
+        <!-- Crackling Electric Plasma Sparks -->
+        <div class="portal-electric-sparks">
+          <span class="p-spark s1"></span>
+          <span class="p-spark s2"></span>
+          <span class="p-spark s3"></span>
+          <span class="p-spark s4"></span>
+        </div>
+
+        <!-- Central Holographic Spider-Society Crest -->
+        <div class="portal-singularity">
+          <div class="singularity-core-glow"></div>
+          <svg class="portal-spider-crest-svg" viewBox="0 0 100 100" fill="none">
+            <defs>
+              <linearGradient id="portal-crest-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff2d55" />
+                <stop offset="50%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#facc15" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="46" stroke="#06b6d4" stroke-width="2" stroke-dasharray="10 6"
+              class="crest-spin-cw" />
+            <circle cx="50" cy="50" r="38" stroke="#e11d48" stroke-width="1.8" stroke-dasharray="6 4"
+              class="crest-spin-ccw" />
+            <path d="M50 4 V96 M4 50 H96 M17 17 L83 83 M17 83 L83 17" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+            <!-- Center Spider Glow Silhouette -->
+            <ellipse cx="50" cy="52" rx="8" ry="13" fill="#ffffff" />
+            <circle cx="50" cy="37" r="5.5" fill="#ffffff" />
+            <!-- 8 Dynamic Glowing Spider Legs -->
+            <path
+              d="M44 45 C32 38 24 44 18 52 M44 49 C30 49 22 57 16 68 M44 55 C32 62 26 72 22 84 M46 59 C38 72 34 84 32 92"
+              stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" />
+            <path
+              d="M56 45 C68 38 76 44 82 52 M56 49 C70 49 78 57 84 68 M56 55 C68 62 74 72 78 84 M54 59 C62 72 66 84 68 92"
+              stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" />
+            <!-- Neon Heart Center -->
+            <circle cx="50" cy="51" r="3.5" fill="#e11d48" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- HUD Telemetry Information -->
+      <div class="bh-telemetry" id="bhTelemetry">
+        <div class="bh-status-pill spidey-status-pill">
+          <span class="bh-pulse-dot"></span>
+          <span id="portalStatusText">COLLIDER ENGAGED · DESTINATION: EARTH-2909</span>
+        </div>
+        <h2 class="bh-title" id="portalTitleText">MELINTASI SPIDER-VERSE...</h2>
+        <p class="bh-desc" id="portalDescText">Menembus batas multiverse menuju timeline spesial Nanda ✨ 🕸️</p>
+        <div class="bh-warp-meter">
+          <div class="bh-warp-bar spidey-warp-bar" id="bhWarpBar"></div>
+        </div>
+        <div class="portal-sub-telemetry">
+          <span class="tele-coord">DIMENSIONAL COORD: [29.09.26 // CANON-LOCK]</span>
+          <span class="tele-speed" id="portalSpeedDisplay">WARP VELOCITY: 99.8% C</span>
+        </div>
+      </div>
+
+      <!-- Dimension Jump Flash -->
+      <div class="bh-whitehole-flash" id="bhWhiteHole"></div>
+    </div>
+
+
+    <!-- Global Heart-Web Touch Burst Canvas -->
+    <canvas id="heartWebCanvas" class="heart-web-canvas" aria-hidden="true"></canvas>
+
+    <!-- =========================================
+         SPIDER-CAM PHOTO BOOTH MODAL (MULTIVERSE POLAROID)
+         ========================================= -->
+    <div id="spiderCamModal" class="spider-cam-modal" aria-hidden="true" style="display: none;">
+      <div class="cam-backdrop" id="camBackdrop"></div>
+      <div class="cam-chassis-dialog spidey-glass-card">
+        <!-- Modal Header -->
+        <div class="cam-header">
+          <div class="cam-badge-tag">
+            <span class="cam-dot-live"></span>
+            <span class="cam-tag-txt">✦ SPIDER-CAM // EARTH-2909 ✦</span>
+          </div>
+          <button type="button" class="cam-close-btn" id="camCloseBtn" title="Tutup Kamera">✕</button>
+        </div>
+
+        <!-- Main Camera Viewfinder Section -->
+        <div class="cam-view-section" id="camViewSection">
+          <div class="cam-viewport-frame" id="camViewportFrame">
+            <!-- Live Video Stream Element -->
+            <video id="camVideo" class="cam-video-element" autoplay playsinline muted></video>
+
+            <!-- Scanner CRT Grid Overlay -->
+            <div class="cam-scanlines"></div>
+            <div class="cam-crosshair-overlay">
+              <span class="crosshair-ch ch-tl"></span>
+              <span class="crosshair-ch ch-tr"></span>
+              <span class="crosshair-ch ch-bl"></span>
+              <span class="crosshair-ch ch-br"></span>
+              <div class="cam-center-reticle"></div>
+            </div>
+
+            <!-- Dynamic Filter / Sticker Overlays -->
+            <div class="cam-filters-overlay" id="camFilterOverlay">
+              <!-- Filter 1: Gwen Ghost-Spider Mask Overlay -->
+              <div class="filter-layer filter-gwen" id="filterLayerGwen">
+                <svg viewBox="0 0 300 220" class="filter-svg-mask">
+                  <!-- Gwen Delicate Cyan Web Rays -->
+                  <path d="M25 95 L80 106 M275 95 L220 106 M150 25 L150 70 M40 65 L82 85 M260 65 L218 85"
+                    stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" opacity="0.9" />
+
+                  <!-- Left Cat-Eye (Gwen: Sleek Almond Pink & Cyan) -->
+                  <path d="M60 94 C80 72 118 78 138 116 C118 136 82 128 60 94 Z" fill="#ec4899" stroke="#ffffff"
+                    stroke-width="3" stroke-linejoin="round" />
+                  <path d="M68 96 C84 80 114 84 130 114 C114 130 86 124 68 96 Z" fill="#ffffff" />
+                  <path d="M64 98 C84 130 116 136 136 116" stroke="#06b6d4" stroke-width="2.5" fill="none"
+                    stroke-linecap="round" opacity="0.9" />
+
+                  <!-- Right Cat-Eye (Gwen: Mirrored) -->
+                  <path d="M240 94 C220 72 182 78 162 116 C182 136 218 128 240 94 Z" fill="#ec4899" stroke="#ffffff"
+                    stroke-width="3" stroke-linejoin="round" />
+                  <path d="M232 96 C216 80 186 84 170 114 C186 130 214 124 232 96 Z" fill="#ffffff" />
+                  <path d="M236 98 C216 130 184 136 164 116" stroke="#06b6d4" stroke-width="2.5" fill="none"
+                    stroke-linecap="round" opacity="0.9" />
+                </svg>
+                <div class="filter-corner-sticker gwen-sticker">🌸 GHOST-SPIDER // EARTH-65</div>
+              </div>
+
+              <!-- Filter 2: Miles Morales Mask Overlay -->
+              <div class="filter-layer filter-miles" id="filterLayerMiles" style="display: none;">
+                <svg viewBox="0 0 300 220" class="filter-svg-mask">
+                  <!-- Miles Comic Spider-Sense Web Spikes (Black & Red) -->
+                  <path d="M22 108 L76 112 M278 108 L224 112 M150 20 L150 64 M34 76 L78 96 M266 76 L222 96"
+                    stroke="#000000" stroke-width="6" stroke-linecap="round" />
+                  <path d="M25 106 L75 110 M275 106 L225 110 M150 22 L150 62 M36 74 L77 94 M264 74 L223 94"
+                    stroke="#ef4444" stroke-width="3.5" stroke-linecap="round" />
+                  <path d="M144 38 L150 22 L156 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                    fill="none" />
+
+                  <!-- Left Eye (Miles: Bold Comic Shape - Black, Red, White) -->
+                  <!-- Layer 1: Thick Black Comic Bezel -->
+                  <path d="M64 108 C72 74 106 64 140 116 C130 148 96 150 64 108 Z" fill="#000000" stroke="#000000"
+                    stroke-width="5" stroke-linejoin="round" />
+                  <!-- Layer 2: Fiery Red Inner Border -->
+                  <path d="M68 108 C76 78 106 70 136 116 C127 142 98 144 68 108 Z" fill="#ef4444" stroke="#dc2626"
+                    stroke-width="2" stroke-linejoin="round" />
+                  <!-- Layer 3: Crisp White Center Lens -->
+                  <path d="M76 108 C82 85 104 80 128 115 C120 134 100 135 76 108 Z" fill="#ffffff" />
+                  <!-- Layer 4: White Comic Arc Glare Reflection -->
+                  <path d="M86 92 Q102 86 118 96" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                    fill="none" />
+
+                  <!-- Right Eye (Miles: Mirrored) -->
+                  <!-- Layer 1: Thick Black Comic Bezel -->
+                  <path d="M236 108 C228 74 194 64 160 116 C170 148 204 150 236 108 Z" fill="#000000" stroke="#000000"
+                    stroke-width="5" stroke-linejoin="round" />
+                  <!-- Layer 2: Fiery Red Inner Border -->
+                  <path d="M232 108 C224 78 194 70 164 116 C173 142 202 144 232 108 Z" fill="#ef4444" stroke="#dc2626"
+                    stroke-width="2" stroke-linejoin="round" />
+                  <!-- Layer 3: Crisp White Center Lens -->
+                  <path d="M224 108 C218 85 196 80 172 115 C180 134 200 135 224 108 Z" fill="#ffffff" />
+                  <!-- Layer 4: White Comic Arc Glare Reflection -->
+                  <path d="M214 92 Q198 86 182 96" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                    fill="none" />
+                </svg>
+                <div class="filter-corner-sticker miles-sticker">⚡ MILES MORALES · EARTH-1610</div>
+              </div>
+
+              <!-- Filter 3: Spider-Man 2099 (Miguel O'Hara) Mask Overlay -->
+              <div class="filter-layer filter-miguel" id="filterLayerMiguel" style="display: none;">
+                <svg viewBox="0 0 300 220" class="filter-svg-mask">
+                  <!-- 2099 Cyber Spikes & Laser Grid -->
+                  <path d="M25 105 L80 115 M275 105 L220 115 M150 25 L150 65" stroke="#ef4444" stroke-width="3.5"
+                    stroke-linecap="round" />
+                  <path d="M35 85 L75 105 M265 85 L225 105" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"
+                    opacity="0.8" />
+                  <!-- Cyber Center Reticle -->
+                  <circle cx="150" cy="98" r="7" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="3 2" fill="none"
+                    opacity="0.8" />
+                  <path d="M142 98 H158 M150 90 V106" stroke="#ef4444" stroke-width="1.5" opacity="0.8" />
+                  <!-- Left 2099 Fanged Visor Eye -->
+                  <path d="M80 98 C92 76 122 78 138 106 C132 120 120 136 112 150 C106 136 98 123 80 98 Z" fill="#dc2626"
+                    stroke="#06b6d4" stroke-width="2.5" stroke-linejoin="round" />
+                  <path d="M86 100 C96 84 118 86 132 108 C124 120 114 134 110 142 C104 130 98 118 86 100 Z"
+                    fill="#ff003f" />
+                  <path d="M96 96 Q115 93 125 104" stroke="#ffffff" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                  <!-- Right 2099 Fanged Visor Eye -->
+                  <path d="M220 98 C208 76 178 78 162 106 C168 120 180 136 188 150 C194 136 202 123 220 98 Z"
+                    fill="#dc2626" stroke="#06b6d4" stroke-width="2.5" stroke-linejoin="round" />
+                  <path d="M214 100 C204 84 182 86 168 108 C176 120 186 134 190 142 C196 130 202 118 214 100 Z"
+                    fill="#ff003f" />
+                  <path d="M204 96 Q185 93 175 104" stroke="#ffffff" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                </svg>
+                <div class="filter-corner-sticker miguel-sticker">👹 SPIDER-MAN 2099 · EARTH-928</div>
+              </div>
+
+              <!-- Filter 4: Canon Event Locked Overlay -->
+              <div class="filter-layer filter-canon" id="filterLayerCanon" style="display: none;">
+                <div class="canon-hologram-banner">
+                  <span class="canon-flash-dot"></span>
+                  <span class="canon-banner-text">✦ CANON EVENT LOCKED · EARTH-2909 ✦</span>
+                </div>
+                <div class="canon-spider-crest">
+                  <svg viewBox="0 0 80 80" class="canon-crest-svg">
+                    <circle cx="40" cy="40" r="36" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6 3"
+                      fill="rgba(6, 182, 212, 0.15)" />
+                    <path d="M40 10 V70 M10 40 H70" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="4 2" />
+                    <ellipse cx="40" cy="42" rx="7" ry="12" fill="#facc15" />
+                    <circle cx="40" cy="28" r="5" fill="#facc15" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Filter 5: Heart Web & Love Overlay -->
+              <div class="filter-layer filter-heart" id="filterLayerHeart" style="display: none;">
+                <div class="heart-web-sticker-tl">🕸️💖</div>
+                <div class="heart-web-sticker-tr">✨🌸</div>
+                <div class="heart-sparkles-row">
+                  <span class="h-spark s1">💖</span>
+                  <span class="h-spark s2">⭐</span>
+                  <span class="h-spark s3">🕷️</span>
+                </div>
+                <div class="filter-corner-sticker heart-sticker">💖 SPECIAL FOR NANDA 💖</div>
+              </div>
+
+              <!-- Filter 6: Normal (No filter) -->
+              <div class="filter-layer filter-none" id="filterLayerNone" style="display: none;">
+                <div class="filter-corner-sticker none-sticker">📷 NATURAL RETRO CAM</div>
+              </div>
+            </div>
+
+            <!-- Flash Burst Effect -->
+            <div class="cam-flash-effect" id="camFlashEffect"></div>
+
+            <!-- Camera Loading & Fallback Upload Box -->
+            <div class="cam-permission-fallback" id="camFallbackBox" style="display: none;">
+              <div class="fallback-icon">📷</div>
+              <p class="fallback-title">Kamera Belum Aktif / Ditolak</p>
+              <p class="fallback-desc">Kamu tetap bisa bikin polaroid dengan memilih foto langsung dari galeri HP atau
+                komputermu!</p>
+              <button type="button" class="cam-upload-btn" id="camUploadBtn">
+                📁 PILIH FOTO DARI GALERI
+              </button>
+            </div>
+            <input type="file" id="camFileInput" accept="image/*" style="display: none;">
+          </div>
+
+          <!-- Filter Selector Tabs -->
+          <div class="cam-filter-pills">
+            <button type="button" class="cam-filter-pill active" data-filter="gwen">🌸 Gwen</button>
+            <button type="button" class="cam-filter-pill" data-filter="miles">⚡ Miles</button>
+            <button type="button" class="cam-filter-pill" data-filter="miguel">👹 2099</button>
+            <button type="button" class="cam-filter-pill" data-filter="canon">💖 Canon</button>
+            <button type="button" class="cam-filter-pill" data-filter="heart">🕸️ Heart</button>
+            <button type="button" class="cam-filter-pill" data-filter="none">📷 Normal</button>
+          </div>
+
+          <!-- Shutter & Controls Row -->
+          <div class="cam-shutter-row">
+            <!-- Flip Camera Button (Front/Back) -->
+            <button type="button" class="cam-aux-btn" id="camFlipBtn" title="Ganti Kamera Depan/Belakang">
+              <span>🔄</span>
+              <span class="aux-lbl">FLIP</span>
+            </button>
+
+            <!-- Big Arcade Shutter Button -->
+            <button type="button" class="cam-shutter-btn" id="camSnapBtn" title="Jepret Foto!">
+              <div class="shutter-inner-ring">
+                <div class="shutter-core-dot"></div>
+              </div>
+            </button>
+
+            <!-- Gallery Upload Button -->
+            <button type="button" class="cam-aux-btn" id="camGalleryTriggerBtn" title="Upload Foto dari File">
+              <span>📁</span>
+              <span class="aux-lbl">UPLOAD</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Printed Polaroid Result Section (Initially hidden) -->
+        <div class="polaroid-print-section" id="polaroidPrintSection" style="display: none;">
+          <div class="polaroid-instant-card" id="polaroidInstantCard">
+            <canvas id="polaroidCanvas" class="polaroid-canvas"></canvas>
+            <span id="instantDateText" style="display: none;">Earth-2909 · Canon Memory</span>
+          </div>
+
+          <div class="polaroid-actions-row">
+            <button type="button" class="cam-action-btn btn-retake" id="camRetakeBtn">
+              <span>🔄</span> FOTO ULANG
+            </button>
+            <button type="button" class="cam-action-btn btn-download-polaroid" id="camDownloadBtn">
+              <span>💾</span> SIMPAN POLAROID HD
+            </button>
+            <button type="button" class="cam-action-btn btn-done-view" id="camDoneViewBtn"
+              title="Tutup Kamera & Lihat Foto di Web">
+              <span>✨</span> LIHAT DI WEB
+            </button>
+          </div>
+
+          <!-- Quick Slot Assign: Pasang foto ini langsung ke kartu kenangan -->
+          <div class="polaroid-slot-assign-box" id="polaroidSlotAssignBox">
+            <p class="assign-title">✦ PASANG FOTO INI KE KARTU KENANGAN ✦</p>
+            <div class="assign-chips-row">
+              <button type="button" class="assign-chip-btn" data-slot="0" title="Pasang ke Senyum Manismu">
+                <span>🌸</span> 1. Senyum Manismu
+              </button>
+              <button type="button" class="assign-chip-btn" data-slot="1" title="Pasang ke Obrolan Bersamamu">
+                <span>☕</span> 2. Obrolan Bersamamu
+              </button>
+              <button type="button" class="assign-chip-btn" data-slot="2" title="Pasang ke Ketulusan Hatimu">
+                <span>💖</span> 3. Ketulusan Hatimu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Photo Picker Modal for Memory Cards -->
+    <div id="spideyPhotoPickerModal" class="spidey-photo-picker-modal" aria-hidden="true" style="display: none;">
+      <div class="picker-overlay" id="pickerOverlay"></div>
+      <div class="picker-dialog spidey-glass-card">
+        <button type="button" class="picker-close-btn" id="pickerCloseBtn" title="Tutup">✕</button>
+        <div class="picker-header">
+          <div class="picker-icon">🕸️📸</div>
+          <h3 class="picker-title" id="pickerTargetTitle">Pasang Foto Kenangan</h3>
+          <p class="picker-sub">Pilih bagaimana kamu ingin memasang foto untuk kenangan ini:</p>
+        </div>
+        <div class="picker-options">
+          <button type="button" class="picker-opt-btn btn-opt-cam" id="pickerOptCamBtn">
+            <div class="opt-icon">📸</div>
+            <div class="opt-text">
+              <strong>Jepret via Spider-Cam</strong>
+              <small>Ambil selfie dengan filter topeng Gwen & Miles, atau retro natural</small>
+            </div>
+            <div class="opt-arrow">➔</div>
+          </button>
+          <button type="button" class="picker-opt-btn btn-opt-upload" id="pickerOptUploadBtn">
+            <div class="opt-icon">📁</div>
+            <div class="opt-text">
+              <strong>Upload dari Galeri HP / PC</strong>
+              <small>Pilih foto kenangan terbaik langsung dari galeri perangkatmu</small>
+            </div>
+            <div class="opt-arrow">➔</div>
+          </button>
+          <button type="button" class="picker-opt-btn btn-opt-recent" id="pickerOptRecentBtn" style="display: none;">
+            <div class="opt-icon">✨</div>
+            <div class="opt-text">
+              <strong>Gunakan Foto Spider-Cam Terakhir</strong>
+              <small>Pasang hasil jepretan Spider-Cam yang sudah kamu buat sebelumnya</small>
+            </div>
+            <div class="opt-arrow">➔</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Polaroid Lightbox HD Zoom Modal -->
+    <div id="polaroidLightboxModal" class="polaroid-lightbox-modal" aria-hidden="true" role="dialog">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-dialog">
+        <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" title="Tutup Foto"
+          aria-label="Tutup Foto">✕</button>
+        <div class="spidey-polaroid-large">
+          <div class="lightbox-pin">🕸️</div>
+          <div class="lightbox-tape"></div>
+          <div class="lightbox-photo-container">
+            <img src="" alt="Polaroid Zoom" class="lightbox-img" id="lightboxImg" style="display: none;">
+            <div class="lightbox-art-fallback" id="lightboxArtFallback" style="display: flex;">
+              <span class="lightbox-art-emoji" id="lightboxArtEmoji">🌸</span>
+              <span class="lightbox-art-badge" id="lightboxArtBadge">Senyum Manis</span>
+            </div>
+          </div>
+          <div class="lightbox-content">
+            <h3 id="lightboxTitle">Senyum Manismu</h3>
+            <p id="lightboxDesc">Deskripsi kenangan...</p>
+            <div class="lightbox-actions" id="lightboxActions" style="display: none;">
+              <button type="button" class="btn-dl-lightbox" id="lightboxDownloadBtn">
+                <span>💾</span> Unduh Foto
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cardData.js"></script>
+    <script src="script.js"></script>
+    <!-- =========================================
+     RETRO PIXEL PLAYLIST POPUP MODAL
+     ========================================= -->
+    <div id="playlistModal" class="playlist-modal" aria-hidden="true">
+      <div class="playlist-overlay" id="playlistOverlay"></div>
+      <div class="playlist-card spidey-glass-card">
+        <div class="playlist-header">
+          <div class="pl-tag">✦ SPIDER-MIXTAPE PLAYLIST ✦</div>
+          <button type="button" class="pl-close-btn" id="playlistCloseBtn">✕</button>
+        </div>
+        <p class="pl-sub">Pilih soundtrack Spider-Verse favoritmu 🎧✨</p>
+        <div class="playlist-items" id="playlistItems">
+          <!-- Lagu otomatis masuk lewat script.js -->
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
